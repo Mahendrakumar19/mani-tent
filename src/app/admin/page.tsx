@@ -8,6 +8,8 @@ interface DashboardStats {
   servicesCount: number;
   menuCategoriesCount: number;
   languagesSupported: string[];
+  bookingsCount?: number;
+  newBookingsCount?: number;
 }
 
 export default function AdminDashboardPage() {
@@ -26,11 +28,12 @@ export default function AdminDashboardPage() {
         }
 
         // Fetch stats
-        const [businessRes, servicesRes, menuRes, dictRes] = await Promise.all([
+        const [businessRes, servicesRes, menuRes, dictRes, bookingsRes] = await Promise.all([
           fetch('/api/admin/business-info'),
           fetch('/api/admin/services'),
           fetch('/api/admin/menu'),
           fetch('/api/admin/dictionary'),
+          fetch('/api/admin/bookings'),
         ]);
 
         if (!businessRes.ok || !servicesRes.ok || !menuRes.ok || !dictRes.ok) {
@@ -44,11 +47,18 @@ export default function AdminDashboardPage() {
           dictRes.json(),
         ]);
 
+        let bookingsData = { stats: { total: 0, new: 0 } };
+        if (bookingsRes.ok) {
+          bookingsData = await bookingsRes.json();
+        }
+
         setStats({
           businessName: business.name,
           servicesCount: services.services?.length || 0,
           menuCategoriesCount: menu.categories?.length || 0,
           languagesSupported: Object.keys(dict),
+          bookingsCount: bookingsData.stats?.total || 0,
+          newBookingsCount: bookingsData.stats?.new || 0,
         });
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error loading dashboard');
@@ -114,6 +124,18 @@ export default function AdminDashboardPage() {
           label="Languages"
           value={stats?.languagesSupported?.join(', ').toUpperCase() || 'N/A'}
         />
+        <StatCard
+          icon="📅"
+          label="Total Bookings"
+          value={`${stats?.bookingsCount || 0} booking${(stats?.bookingsCount || 0) !== 1 ? 's' : ''}`}
+        />
+        {stats && stats.newBookingsCount !== undefined && stats.newBookingsCount > 0 && (
+          <StatCard
+            icon="🆕"
+            label="New Bookings"
+            value={`${stats.newBookingsCount} new`}
+          />
+        )}
       </div>
 
       {/* Quick Actions */}
@@ -143,6 +165,12 @@ export default function AdminDashboardPage() {
             icon="📝"
             title="Edit Content"
             description="Update all website text content"
+          />
+          <QuickActionCard
+            href="/admin/bookings"
+            icon="📅"
+            title="View Bookings"
+            description="Manage wedding booking requests"
           />
           <QuickActionCard
             href="/admin/settings"

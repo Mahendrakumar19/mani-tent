@@ -5,6 +5,7 @@ import { dictionary } from '@/content/dictionary';
 import { generatePageMetadata } from '@/lib/seo';
 import { Section, SectionHeader } from '@/components/Section';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import BookingForm from '@/components/BookingForm/BookingForm';
 
 export function generateMetadata({
   params,
@@ -402,6 +403,19 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         >
           {locale === 'hi' ? 'होमपेज पर जाएं' : 'Visit Home'}
         </Link>
+      </Section>
+
+      {/* Booking Form Section */}
+      <Section className="bg-ivory">
+        <SectionHeader
+          title={t.booking.title}
+          subtitle={t.booking.subtitle}
+          align="center"
+        />
+      </Section>
+
+      <Section className="max-w-2xl mx-auto">
+        <BookingForm locale={locale} t={t} />
       </Section>
 
       {/* Thank You Message */}

@@ -24,6 +24,7 @@ export default function AdminNav() {
 
   const navItems = [
     { href: '/admin', label: 'Dashboard', icon: '📊' },
+    { href: '/admin/bookings', label: 'Bookings', icon: '📅' },
     { href: '/admin/business-info', label: 'Business Info', icon: '🏢' },
     { href: '/admin/services', label: 'Services', icon: '🎯' },
     { href: '/admin/menu', label: 'Catering Menu', icon: '🍽️' },
