@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "name": "Vegetarian",
+      "items": [
+        "Paneer Tikka",
+        "Vegetable Biryani",
+        "Dal Makhani",
+        "Paneer Butter Masala"
+      ]
+    },
+    {
+      "name": "Non-Vegetarian",
+      "items": [
+        "Tandoori Chicken",
+        "Butter Chicken",
+        "Biryani",
+        "Kebabs"
+      ]
+    },
+    {
+      "name": "Beverages",
+      "items": [
+        "Fresh Fruit Juice",
+        "Lassi",
+        "Soft Drinks",
+        "Buttermilk"
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        "Gulab Jamun",
+        "Rasgulla",
+        "Kheer",
+        "Barfi"
+      ]
+    }
+  ]
+}

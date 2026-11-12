@@ -1,0 +1,44 @@
+{
+  "services": [
+    {
+      "id": "wedding-tent-setup",
+      "slug": {
+        "en": "wedding-tent-house",
+        "hi": "wedding-tent-house"
+      },
+      "title": {
+        "en": "Wedding Tent Setup",
+        "hi": "वेडिंग टेंट सेटअप"
+      },
+      "shortDescription": {
+        "en": "Thoughtfully planned tent arrangements for wedding celebrations, with attention to the venue, layout and overall setting.",
+        "hi": "शादी के आयोजन, स्थान और जरूरतों को ध्यान में रखकर टेंट व्यवस्था की योजना।"
+      },
+      "fullDescription": {
+        "en": [
+          "A well-planned tent arrangement helps establish the setting for a wedding celebration. MANI TENT HOUSE welcomes enquiries for wedding tent setup in Bilaspur and nearby areas.",
+          "The right arrangement depends on the venue, event requirements and the overall plan for the celebration. Share your event location, date and requirements so the details can be discussed."
+        ],
+        "hi": [
+          "शादी के आयोजन में टेंट की व्यवस्था पूरे कार्यक्रम के माहौल का एक महत्वपूर्ण हिस्सा होती है। MANI TENT HOUSE बिलासपुर और आसपास के क्षेत्रों में वेडिंग टेंट सेटअप के लिए enquiries आमंत्रित करता है।",
+          "टेंट की व्यवस्था आयोजन स्थल, कार्यक्रम की जरूरतों और आपकी योजना पर निर्भर करती है। अपने आयोजन की तारीख, स्थान और जरूरतें साझा करें, ताकि जरूरी विवरणों पर चर्चा की जा सके।"
+        ]
+      },
+      "checklist": {
+        "en": [
+          "Event date and venue details",
+          "Type of wedding occasion",
+          "Tent arrangement requirements",
+          "Preferred look and overall setting"
+        ],
+        "hi": [
+          "आयोजन की तारीख और स्थान",
+          "शादी के कार्यक्रम का प्रकार",
+          "टेंट व्यवस्था की जरूरतें",
+          "पसंदीदा लुक और माहौल"
+        ]
+      },
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200"
+    }
+  ]
+}

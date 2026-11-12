@@ -37,15 +37,19 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <Hero locale={locale} />
 
       {/* Introduction */}
-      <Section>
+      <Section className="bg-gradient-to-b from-transparent via-ivory/20 to-transparent">
         <SectionHeader title={t.intro.title} />
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-          <p className="text-base md:text-lg leading-relaxed text-brown/90">
-            {t.intro.body1}
-          </p>
-          <p className="text-base md:text-lg leading-relaxed text-brown/90">
-            {t.intro.body2}
-          </p>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+          <div className="space-y-4">
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-brown/85">
+              {t.intro.body1}
+            </p>
+          </div>
+          <div className="space-y-4">
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-brown/85">
+              {t.intro.body2}
+            </p>
+          </div>
         </div>
       </Section>
 
@@ -55,39 +59,41 @@ export default function HomePage({ params }: { params: { locale: string } }) {
           eyebrow={locale === 'hi' ? 'सेवाएं' : 'Services'}
           title={t.servicesSection.title}
           subtitle={t.servicesSection.subtitle}
+          align="center"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {CONFIRMED_SERVICES.map((service) => (
-            <ServiceCard
-              key={service.id}
-              title={service.title}
-              description={service.shortDescription}
-              image={service.image}
-              href={`/${locale}/services/${service.slug[locale]}`}
-              locale={locale}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          {CONFIRMED_SERVICES.map((service, index) => (
+            <div key={service.id} style={{ '--delay': `${index * 100}ms` } as React.CSSProperties}>
+              <ServiceCard
+                title={service.title}
+                description={service.shortDescription}
+                image={service.image}
+                href={`/${locale}/services/${service.slug[locale]}`}
+                locale={locale}
+              />
+            </div>
           ))}
         </div>
       </Section>
 
       {/* Why Choose Us */}
       <Section>
-        <SectionHeader title={t.whyChooseUs.title} />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <SectionHeader title={t.whyChooseUs.title} align="center" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {t.whyChooseUs.reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 border border-beige shadow-sm"
+              className="bg-white rounded-xl p-7 sm:p-6 md:p-8 border border-beige/50 shadow-md hover:shadow-xl hover:border-gold/30 transition-all duration-300 group hover:translate-y-[-4px]"
             >
-              <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                <span className="text-gold font-playfair text-xl font-bold">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold/20 to-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
+                <span className="text-gold font-playfair text-2xl font-bold">
                   {index + 1}
                 </span>
               </div>
-              <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
+              <h3 className="font-playfair text-lg font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors">
                 {reason.title}
               </h3>
-              <p className="text-sm text-brown/80 leading-relaxed">
+              <p className="text-sm text-brown/75 leading-relaxed">
                 {reason.desc}
               </p>
             </div>
@@ -96,39 +102,41 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Decoration Inspiration Gallery */}
-      <Section className="bg-charcoal text-ivory">
+      <Section className="bg-charcoal/95 text-ivory">
         <SectionHeader
           title={t.gallerySection.title}
           subtitle={t.gallerySection.subtitle}
+          align="center"
         />
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
-          {CONFIRMED_SERVICES.slice(0, 5).map((service) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10">
+          {CONFIRMED_SERVICES.slice(0, 5).map((service, index) => (
             <div
               key={service.id}
-              className="relative h-64 md:h-80 overflow-hidden rounded-lg group"
+              className="relative h-56 sm:h-64 md:h-80 overflow-hidden rounded-xl group shadow-lg"
             >
               <img
                 src={service.image}
                 alt={service.title[locale]}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-120"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent flex items-end p-4">
-                <span className="text-sm font-medium text-gold">
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 md:p-6">
+                <span className="text-sm md:text-base font-semibold text-gold/90">
                   {service.title[locale]}
                 </span>
               </div>
             </div>
           ))}
         </div>
-        <p className="text-sm text-ivory/60 mb-6">{t.gallerySection.note}</p>
+        <p className="text-sm text-ivory/50 mb-8 text-center">{t.gallerySection.note}</p>
+        <div className="flex justify-center">
         <Link
           href={`/${locale}/gallery`}
-          className="inline-flex items-center text-gold hover:underline text-sm font-medium"
+          className="inline-flex items-center text-gold hover:text-gold/80 hover:gap-3 text-base font-semibold transition-all duration-300 group"
         >
           {t.gallerySection.cta}
           <svg
-            className="ml-2 w-4 h-4"
+            className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -136,23 +144,24 @@ export default function HomePage({ params }: { params: { locale: string } }) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </Link>
+        </div>
       </Section>
 
       {/* Process */}
       <Section className="bg-ivory">
-        <SectionHeader title={t.processSection.title} />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <SectionHeader title={t.processSection.title} align="center" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 max-w-5xl mx-auto">
           {t.processSection.steps.map((step) => (
-            <div key={step.num} className="relative">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gold text-charcoal font-playfair font-bold flex items-center justify-center">
+            <div key={step.num} className="relative group">
+              <div className="flex flex-col items-center text-center">
+                <span className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-gold/30 to-gold/10 text-charcoal font-playfair font-bold flex items-center justify-center text-xl mb-5 group-hover:from-gold/40 group-hover:to-gold/20 transition-all shadow-md">
                   {step.num}
                 </span>
-                <h3 className="font-playfair text-lg font-semibold text-charcoal">
+                <h3 className="font-playfair text-lg font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors">
                   {step.title}
                 </h3>
               </div>
-              <p className="text-sm text-brown/80 leading-relaxed ml-13 pl-13">
+              <p className="text-sm text-brown/75 leading-relaxed text-center">
                 {step.desc}
               </p>
             </div>
@@ -162,10 +171,12 @@ export default function HomePage({ params }: { params: { locale: string } }) {
 
       {/* Location */}
       <Section>
-        <SectionHeader title={t.locationSection.title} />
-        <p className="text-base md:text-lg leading-relaxed text-brown/90 max-w-3xl">
-          {t.locationSection.text}
-        </p>
+        <SectionHeader title={t.locationSection.title} align="center" />
+        <div className="max-w-3xl mx-auto bg-gold/3 rounded-xl p-8 md:p-10 border border-gold/20">
+          <p className="text-base md:text-lg leading-relaxed text-brown/80 text-center">
+            {t.locationSection.text}
+          </p>
+        </div>
       </Section>
 
       {/* Menu Card */}
@@ -173,17 +184,18 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         <SectionHeader
           title={t.menuSection.title}
           subtitle={t.menuSection.subtitle}
+          align="center"
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {t.menuSection.categories.map((category, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 border border-beige shadow-sm">
-              <h3 className="font-playfair text-lg font-semibold text-charcoal mb-4">
+            <div key={index} className="bg-white rounded-xl p-7 md:p-8 border border-beige/50 shadow-md hover:shadow-xl hover:border-gold/30 transition-all duration-300 group hover:translate-y-[-4px]">
+              <h3 className="font-playfair text-xl font-semibold text-charcoal mb-6 group-hover:text-gold transition-colors">
                 {category.name}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-sm text-brown/80 flex items-start gap-2">
-                    <span className="text-gold mt-1.5 flex-shrink-0">•</span>
+                  <li key={itemIndex} className="text-sm text-brown/70 flex items-start gap-3 leading-relaxed">
+                    <span className="text-gold/80 mt-1 flex-shrink-0 font-bold">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -195,21 +207,22 @@ export default function HomePage({ params }: { params: { locale: string } }) {
 
       {/* FAQ */}
       <Section className="bg-ivory">
-        <SectionHeader title={t.faqSection.title} />
-        <div className="max-w-3xl">
+        <SectionHeader title={t.faqSection.title} align="center" />
+        <div className="max-w-3xl mx-auto">
           <FAQAccordion items={t.faqSection.faqs} />
         </div>
       </Section>
 
       {/* Final CTA */}
-      <Section className="bg-charcoal text-ivory text-center">
+      <Section className="bg-gradient-to-b from-charcoal/95 to-charcoal text-ivory text-center">
         <SectionHeader
           title={t.finalCta.title}
           subtitle={t.finalCta.text}
+          align="center"
         />
         <Link
           href={`/${locale}/contact`}
-          className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gold text-charcoal font-semibold text-base hover:bg-gold/90 transition-colors shadow-lg shadow-gold/20"
+          className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gold text-charcoal font-bold text-lg hover:bg-gold/90 hover:shadow-2xl hover:shadow-gold/40 hover:scale-105 transition-all duration-300 shadow-lg shadow-gold/20"
         >
           {t.finalCta.btn}
         </Link>

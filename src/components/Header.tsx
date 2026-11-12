@@ -39,27 +39,27 @@ export default function Header({ locale }: HeaderProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-ivory/95 backdrop-blur-md shadow-md border-b border-gold/20'
+          ? 'bg-ivory/98 backdrop-blur-md shadow-lg border-b border-gold/30'
           : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href={`/${locale}`} className="flex items-center gap-2">
-            <span className="font-playfair text-xl md:text-2xl font-bold tracking-wide text-charcoal">
+        <div className="flex items-center justify-between h-16 md:h-20 lg:h-24">
+          <Link href={`/${locale}`} className="flex items-center gap-2 transition-opacity hover:opacity-80">
+            <span className="font-playfair text-lg md:text-2xl lg:text-3xl font-bold tracking-wide text-charcoal">
               MANI TENT HOUSE
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12 lg:gap-16">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors relative pb-1 ${
+                  className={`text-sm font-medium transition-all duration-300 relative pb-2 ${
                     isActive ? 'text-gold' : 'text-brown hover:text-gold'
                   }`}
                 >
@@ -76,7 +76,7 @@ export default function Header({ locale }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-md text-charcoal hover:bg-gold/10"
+            className="md:hidden p-2.5 rounded-lg text-charcoal hover:bg-gold/15 transition-colors"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen((v) => !v)}
@@ -109,18 +109,18 @@ export default function Header({ locale }: HeaderProps) {
         {/* Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-4 space-y-3 border-t border-gold/20">
+          <div className="py-6 px-2 space-y-1 border-t border-gold/20 bg-ivory/50 backdrop-blur-sm">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block py-2 text-base font-medium ${
-                    isActive ? 'text-gold' : 'text-brown'
+                  className={`block py-3 px-3 text-base font-medium rounded-lg transition-colors ${
+                    isActive ? 'text-gold bg-gold/10' : 'text-brown hover:bg-gold/5'
                   }`}
                 >
                   {item.label}
