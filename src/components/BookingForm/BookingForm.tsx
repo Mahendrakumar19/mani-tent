@@ -4,6 +4,8 @@ import { useState, FormEvent } from 'react';
 import { BookingFormData, BookingResponse } from '@/lib/bookings/types';
 import { validateBookingForm, ValidationError } from '@/lib/bookings/validation';
 import { CONFIRMED_SERVICES } from '@/content/data';
+import { generateAdminWhatsAppLink, openWhatsAppChat } from '@/lib/bookings/whatsapp-wa-me';
+import { Booking } from '@/lib/bookings/types';
 
 interface BookingFormProps {
   locale: 'en' | 'hi';
@@ -33,6 +35,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
     title: string;
     message: string;
   } | null>(null);
+  const [successBooking, setSuccessBooking] = useState<any>(null);
 
   const labels = t.booking;
 
@@ -98,6 +101,22 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
       const data: BookingResponse = await response.json();
 
       if (data.success) {
+        // Store booking info for WhatsApp button
+        setSuccessBooking({
+          customerName: formData.customerName,
+          phone: formData.phone,
+          email: formData.email,
+          eventDate: formData.eventDate,
+          eventType: formData.eventType,
+          guestCount: formData.guestCount ? parseInt(formData.guestCount, 10) : undefined,
+          eventDetails: formData.eventDetails,
+          budgetRange: formData.budgetRange,
+          additionalRequests: formData.additionalRequests,
+          honeycombGlamping: formData.honeycombGlamping,
+          preferredContact: formData.preferredContact,
+          id: data.bookingId,
+        });
+
         setSubmitMessage({
           type: 'success',
           title: labels.successTitle,
@@ -167,14 +186,49 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
             {submitMessage.title}
           </h3>
           <p
-            className={
+            className={`mb-4 ${
               submitMessage.type === 'success'
                 ? 'text-green-700'
                 : 'text-red-700'
-            }
+            }`}
           >
             {submitMessage.message}
           </p>
+          
+          {/* WhatsApp Notification Button */}
+          {submitMessage.type === 'success' && successBooking && (
+            <div className="mt-6 space-y-3">
+              <p className="text-sm text-green-700 font-medium">
+                ✨ {locale === 'hi' ? 'आपके बुकिंग विवरण को WhatsApp पर भेजें' : 'Send booking details to admin via WhatsApp'}
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  const waLink = generateAdminWhatsAppLink(
+                    successBooking,
+                    '919098888130' // Admin phone
+                  );
+                  openWhatsAppChat(waLink);
+                }}
+                className="w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.223-5.047 5.455-5.047 8.905 0 2.763.75 5.431 2.161 7.75l-2.335 8.5c-.42 1.532.372 3.288 1.901 3.708.479.129.98.129 1.461.001l8.497-2.324c2.318 1.409 5.018 2.164 7.782 2.164 8.714 0 15.888-7.065 15.888-15.777 0-2.761-.75-5.428-2.161-7.75l2.335-8.497c.42-1.532-.372-3.288-1.901-3.708-.479-.129-.98-.129-1.461-.001l-8.497 2.324C12.394.751 9.694 0 6.933 0 1.266 0 -5.864 7.065 -5.864 15.777c0 2.761.75 5.428 2.161 7.75l-2.335 8.497c-.42 1.532.372 3.288 1.901 3.708.479.129.98.129 1.461.001l8.497-2.324c2.318 1.409 5.018 2.164 7.782 2.164 8.714 0 15.888-7.065 15.888-15.777 0-2.761-.75-5.428-2.161-7.75l2.335-8.497c.42-1.532-.372-3.288-1.901-3.708-.479-.129-.98-.129-1.461-.001z"/>
+                </svg>
+                {locale === 'hi' ? 'WhatsApp पर भेजें' : 'Send via WhatsApp'}
+              </button>
+              <p className="text-xs text-green-600">
+                {locale === 'hi'
+                  ? 'बटन क्लिक करें और WhatsApp खुलेगा आपके बुकिंग विवरण के साथ'
+                  : 'Click to open WhatsApp with your booking details'}
+              </p>
+            </div>
+          )}
         </div>
       )}
 

@@ -5,6 +5,7 @@ export const dictionary = {
     address: "Hemu Nagar, Bandhuapara Talab, Torwa Road, Torwa, Bilaspur-Chhattisgarh-495004, Chhattisgarh",
     phone1: "9098888130",
     phone2: "7646857765",
+    adminPhone: "9098888130",
     tagline: "We Create Celebrations. You Create Memories.",
     nav: {
       home: "Home",
@@ -229,6 +230,14 @@ export const dictionary = {
         eventTypeRequired: "Please select an event type",
         guestCountInvalid: "Please enter a valid guest count",
       },
+      whatsappNotification: {
+        title: "Send to WhatsApp",
+        description: "Send booking details to admin via WhatsApp",
+        button: "Send via WhatsApp",
+        buttonAlt: "📱 Send to WhatsApp",
+        hint: "Click to open WhatsApp with your booking details",
+        emoji: "✨",
+      },
     },
     footer: {
       rights: "MANI TENT HOUSE. All rights reserved.",
@@ -243,6 +252,7 @@ export const dictionary = {
     address: "हेमू नगर, बंधुआपारा तालाब, तोरवा रोड, तोरवा, बिलासपुर-छत्तीसगढ़-495004",
     phone1: "9098888130",
     phone2: "7646857765",
+    adminPhone: "9098888130",
     tagline: "हर जश्न को बनाएं यादगार।",
     nav: {
       home: "होम",
@@ -466,6 +476,14 @@ export const dictionary = {
         dateInPast: "आयोजन की तारीख भविष्य में होनी चाहिए",
         eventTypeRequired: "कृपया एक आयोजन प्रकार चुनें",
         guestCountInvalid: "कृपया एक वैध अतिथि संख्या दर्ज करें",
+      },
+      whatsappNotification: {
+        title: "WhatsApp पर भेजें",
+        description: "बुकिंग विवरण व्यवस्थापक को WhatsApp के माध्यम से भेजें",
+        button: "WhatsApp पर भेजें",
+        buttonAlt: "📱 WhatsApp पर भेजें",
+        hint: "क्लिक करें और अपने बुकिंग विवरण के साथ WhatsApp खोलें",
+        emoji: "✨",
       },
     },
     footer: {

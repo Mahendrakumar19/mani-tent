@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { BookingFormData, BookingResponse } from '@/lib/bookings/types';
 import { validateBookingForm } from '@/lib/bookings/validation';
 import { saveBooking, createBookingFromFormData, readBookings } from '@/lib/bookings/utils';
+import { notifyAdminViaWhatsApp } from '@/lib/bookings/whatsapp-notify';
 
 export async function POST(request: NextRequest): Promise<NextResponse<BookingResponse>> {
   try {
@@ -29,6 +30,12 @@ export async function POST(request: NextRequest): Promise<NextResponse<BookingRe
 
     // Save booking
     saveBooking(booking);
+
+    // Send WhatsApp notification (async, non-blocking)
+    // This runs in the background and doesn't affect the response
+    notifyAdminViaWhatsApp(booking).catch((error) => {
+      console.error('Failed to send WhatsApp notification:', error);
+    });
 
     return NextResponse.json(
       {

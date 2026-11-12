@@ -1,0 +1,65 @@
+{
+  "enabled": false,
+  "provider": "webhook",
+  "adminPhoneNumber": "",
+  "comments": {
+    "enabled": "Set to true to enable WhatsApp notifications for bookings",
+    "provider": "Options: 'twilio', 'webhook', 'make', 'none'",
+    "adminPhoneNumber": "Admin's WhatsApp number with country code (e.g., '+919098888130')",
+    "twilioConfig": "Only needed if provider is 'twilio'",
+    "webhookConfig": "Only needed if provider is 'webhook' or 'make'"
+  },
+  "twilio": {
+    "accountSid": "",
+    "authToken": "",
+    "phoneNumber": "",
+    "comments": {
+      "accountSid": "Your Twilio Account SID (get from https://console.twilio.com)",
+      "authToken": "Your Twilio Auth Token (get from https://console.twilio.com)",
+      "phoneNumber": "Twilio WhatsApp Sandbox number (e.g., '+14155238886')",
+      "setup": "1. Sign up at https://www.twilio.com\n2. Get WhatsApp Sandbox number\n3. Add your phone number as verified participant\n4. Copy credentials here"
+    }
+  },
+  "webhook": {
+    "url": "",
+    "comments": {
+      "url": "Webhook URL to receive booking notifications",
+      "options": "Use https://webhook.cool, https://webhook.site, or Make.com automation",
+      "format": "POST requests with booking data in JSON format",
+      "example": "https://hook.make.com/xxxxx or https://webhook.cool/xxxxx"
+    }
+  },
+  "setup_guide": {
+    "option_1_webhook_cool": {
+      "steps": [
+        "1. Go to https://webhook.cool",
+        "2. Click 'Start receiving webhooks'",
+        "3. Copy your webhook URL",
+        "4. Paste it in webhook.url field",
+        "5. Done! You'll see all bookings in webhook.cool"
+      ]
+    },
+    "option_2_twilio": {
+      "steps": [
+        "1. Sign up at https://www.twilio.com",
+        "2. Navigate to Console > WhatsApp Sandbox",
+        "3. Get your sandbox number (e.g., +14155238886)",
+        "4. Join the sandbox by messaging 'join [code]' from your WhatsApp",
+        "5. Copy Account SID and Auth Token from Console",
+        "6. Paste all credentials in twilio section",
+        "7. Verify your phone number as a participant"
+      ]
+    },
+    "option_3_make_com": {
+      "steps": [
+        "1. Sign up at https://www.make.com",
+        "2. Create new scenario",
+        "3. Add 'Webhooks > Custom Webhook' as trigger",
+        "4. Copy the webhook URL",
+        "5. Add actions: Send message via WhatsApp/SMS or Email",
+        "6. Paste webhook URL in webhook.url field",
+        "7. Done! Make.com handles WhatsApp sending"
+      ]
+    }
+  }
+}
