@@ -39,7 +39,7 @@ export default function ServiceCard({ title, description, image, href, locale }:
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/30 to-transparent" />
       </div>
       <div className="p-6 sm:p-5 md:p-6">
         <h3 className="font-playfair text-lg sm:text-xl font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors line-clamp-2">

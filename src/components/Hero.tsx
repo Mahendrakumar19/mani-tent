@@ -11,7 +11,7 @@ export default function Hero({ locale }: HeroProps) {
   const t = dictionary[locale].hero;
 
   return (
-    <section className="relative min-h-[90vh] sm:min-h-[85vh] flex items-center overflow-hidden mt-16 md:mt-0">
+    <section className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden mt-16 md:mt-0">
       {/* Decorative background pattern */}
       <div
         className="absolute inset-0 bg-gradient-to-b from-charcoal/95 via-charcoal/80 to-charcoal/60"

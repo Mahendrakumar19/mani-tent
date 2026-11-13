@@ -11,7 +11,7 @@ export default function Footer({ locale }: FooterProps) {
   return (
     <footer className="bg-charcoal/95 text-ivory/90 border-t border-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mb-12">
           <div>
             <h3 className="font-playfair text-2xl lg:text-3xl font-bold text-gold mb-6">
               MANI TENT HOUSE
@@ -76,7 +76,7 @@ export default function Footer({ locale }: FooterProps) {
 
         {/* Bottom Section */}
         <div className="mt-12 pt-10 border-t border-gold/20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 mb-8 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 text-sm">
             <div className="flex-1">
               <h4 className="text-gold font-semibold mb-3 tracking-wide uppercase text-xs">{locale === 'hi' ? 'पता' : 'Address'}</h4>
               <p className="text-white leading-relaxed">{t.address}</p>
