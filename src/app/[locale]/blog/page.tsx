@@ -50,7 +50,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Blog Header */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={locale === 'hi' ? 'हमारा ब्लॉग' : 'Our Blog'}
           subtitle={
@@ -131,7 +131,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Topics Section */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={
             locale === 'hi'
@@ -240,7 +240,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Related Links */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={
             locale === 'hi'

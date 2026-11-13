@@ -115,7 +115,7 @@ export default function MenuPage() {
                     type="text"
                     value={item}
                     onChange={(e) => handleItemChange(categoryIndex, itemIndex, e.target.value)}
-                    className="flex-1 px-4 py-2 rounded-lg bg-ivory border border-beige/50 text-charcoal focus:outline-none focus:ring-2 focus:ring-gold/50"
+                    className="flex-1 px-4 py-2 rounded-lg bg-white border border-beige/50 text-charcoal focus:outline-none focus:ring-2 focus:ring-gold/50"
                   />
                   <button
                     type="button"

@@ -47,7 +47,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Gallery Header */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={t.gallerySection.title}
           subtitle={t.gallerySection.subtitle}
@@ -91,7 +91,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Gallery Note */}
-      <Section className="bg-beige">
+      <Section className="bg-white/50 border-y border-beige">
         <div className="max-w-3xl">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'गैलरी के बारे में' : 'About This Gallery'}
@@ -108,7 +108,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Service Categories */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={
             locale === 'hi'
@@ -243,7 +243,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Ready to Plan */}
-      <Section className="bg-ivory text-center">
+      <Section className="bg-white text-center">
         <SectionHeader
           title={
             locale === 'hi'

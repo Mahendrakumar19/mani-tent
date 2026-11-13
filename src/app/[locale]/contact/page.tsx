@@ -48,7 +48,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Contact Header */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={locale === 'hi' ? 'संपर्क में रहें' : 'Get In Touch'}
           subtitle={
@@ -114,7 +114,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Quick Contact Links */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-playfair text-2xl font-bold text-charcoal mb-6">
             {locale === 'hi' ? 'तुरंत संपर्क करें' : 'Quick Contact'}
@@ -145,7 +145,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Contact Form */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <div className="max-w-2xl mx-auto">
           <SectionHeader
             title={
@@ -370,7 +370,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
           ].map((item) => (
             <div
               key={item.num}
-              className="text-center bg-ivory rounded-lg p-6 border border-beige"
+              className="text-center bg-white rounded-lg p-6 border border-beige"
             >
               <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gold text-charcoal font-playfair font-bold flex items-center justify-center mx-auto mb-4">
                 {item.num}
@@ -409,7 +409,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Booking Form Section */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={t.booking.title}
           subtitle={t.booking.subtitle}
@@ -423,7 +423,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
 
       {/* Thank You Message */}
       <Section>
-        <div className="max-w-2xl mx-auto text-center bg-ivory rounded-lg p-8 border border-beige">
+        <div className="max-w-2xl mx-auto text-center bg-white rounded-lg p-8 border border-beige">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'धन्यवाद!' : 'Thank You!'}
           </h3>

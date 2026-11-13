@@ -56,7 +56,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Services */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           eyebrow={locale === 'hi' ? 'सेवाएं' : 'Services'}
           title={t.servicesSection.title}
@@ -141,7 +141,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Process */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader title={t.processSection.title} align="center" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 max-w-5xl mx-auto">
           {t.processSection.steps.map((step) => (
@@ -173,7 +173,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Menu Card */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={t.menuSection.title}
           subtitle={t.menuSection.subtitle}
@@ -200,7 +200,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader title={t.faqSection.title} align="center" />
         <div className="max-w-3xl mx-auto">
           <FAQAccordion items={t.faqSection.faqs} />

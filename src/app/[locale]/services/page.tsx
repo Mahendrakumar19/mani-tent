@@ -50,7 +50,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
       </Section>
 
       {/* Services Header */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={t.servicesSection.title}
           subtitle={t.servicesSection.subtitle}
@@ -75,7 +75,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
       </Section>
 
       {/* Service Features */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={
             locale === 'hi'
@@ -210,7 +210,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
             ].map((item, index) => (
               <li
                 key={index}
-                className="flex gap-4 items-start bg-ivory p-4 rounded-lg border border-beige"
+                className="flex gap-4 items-start bg-white p-4 rounded-lg border border-beige"
               >
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gold text-charcoal flex items-center justify-center font-bold text-sm">
                   {index + 1}
@@ -226,7 +226,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
       </Section>
 
       {/* Pricing Note */}
-      <Section className="bg-beige">
+      <Section className="bg-white/50 border-t border-b border-beige">
         <div className="max-w-3xl">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'मूल्य निर्धारण' : 'Pricing'}

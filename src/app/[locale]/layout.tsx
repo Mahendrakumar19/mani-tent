@@ -43,7 +43,7 @@ export default function LocaleLayout({
       className={`${playfair.variable} ${noto.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-inter bg-ivory text-charcoal antialiased">
+      <body className="font-inter bg-white text-charcoal antialiased">
         <Header locale={locale} />
         <main className="pt-16 md:pt-20">{children}</main>
         <Footer locale={locale} />

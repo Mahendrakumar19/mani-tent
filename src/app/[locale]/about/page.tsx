@@ -47,7 +47,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* About Hero */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={locale === 'hi' ? 'हमारे बारे में' : 'About MANI TENT HOUSE'}
           align="center"
@@ -99,7 +99,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Why Choose Us - Extended */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={locale === 'hi' ? 'क्यों हमें चुनें' : 'Why Choose Us'}
           align="center"

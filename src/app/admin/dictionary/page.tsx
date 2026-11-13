@@ -103,7 +103,7 @@ export default function DictionaryPage() {
           className={`px-6 py-3 rounded-lg font-bold transition-colors ${
             language === 'en'
               ? 'bg-gold text-charcoal'
-              : 'bg-ivory text-charcoal hover:bg-gold/20'
+              : 'bg-white text-charcoal hover:bg-gold/20'
           }`}
         >
           English
@@ -113,7 +113,7 @@ export default function DictionaryPage() {
           className={`px-6 py-3 rounded-lg font-bold transition-colors ${
             language === 'hi'
               ? 'bg-gold text-charcoal'
-              : 'bg-ivory text-charcoal hover:bg-gold/20'
+              : 'bg-white text-charcoal hover:bg-gold/20'
           }`}
         >
           हिंदी
@@ -152,7 +152,7 @@ export default function DictionaryPage() {
                   {typeof sectionData === 'object' && Array.isArray(sectionData) ? (
                     <div className="space-y-4">
                       {sectionData.map((item, index) => (
-                        <div key={index} className="p-4 bg-ivory rounded-lg">
+                        <div key={index} className="p-4 bg-white rounded-lg border border-beige/30">
                           {Object.entries(item).map(([key, value]) => (
                             <FormInput
                               key={key}

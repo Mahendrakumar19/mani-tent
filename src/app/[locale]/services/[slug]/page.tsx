@@ -116,7 +116,7 @@ export default function ServiceDetailPage({
       </Section>
 
       {/* Checklist */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={
             locale === 'hi'
@@ -209,7 +209,7 @@ export default function ServiceDetailPage({
       </Section>
 
       {/* Process */}
-      <Section className="bg-ivory">
+      <Section className="bg-white">
         <SectionHeader
           title={locale === 'hi' ? 'इस सेवा के लिए प्रक्रिया' : 'Our Process'}
         />

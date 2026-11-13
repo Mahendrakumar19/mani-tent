@@ -224,7 +224,7 @@ export default function AdminBookingsPage() {
                 {filteredBookings.map((booking) => (
                   <tr
                     key={booking.id}
-                    className="hover:bg-ivory transition-colors"
+                    className="hover:bg-white/50 transition-colors"
                   >
                     <td className="px-6 py-4 font-medium text-charcoal">
                       {booking.customerName}

@@ -112,7 +112,7 @@ export default function ServicesPage() {
                 className={`px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap ${
                   activeService === index
                     ? 'bg-gold text-charcoal'
-                    : 'bg-ivory text-charcoal hover:bg-gold/20'
+                    : 'bg-white text-charcoal hover:bg-gold/20'
                 }`}
               >
                 {s.title.en}
