@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { dictionary } from '@/content/dictionary';
+import Button from './Button';
 
 interface HeroProps {
   locale: 'en' | 'hi';
@@ -40,19 +41,23 @@ export default function Hero({ locale }: HeroProps) {
           {t.description}
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 animate-fade-in-delay-4">
-          <Link
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 animate-fade-in-delay-4 w-full sm:w-auto">
+          <Button
             href={`/${locale}/contact`}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-gold text-charcoal font-semibold text-base hover:bg-gold/90 hover:shadow-2xl hover:shadow-gold/30 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-gold/20"
+            variant="primary"
+            size="md"
+            className="w-full sm:w-auto"
           >
             {t.primaryCta}
-          </Link>
-          <Link
+          </Button>
+          <Button
             href={`/${locale}/services`}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-ivory/70 text-white font-semibold text-base hover:bg-white/15 hover:border-ivory hover:shadow-lg transition-all duration-300"
+            variant="secondary"
+            size="md"
+            className="w-full sm:w-auto"
           >
             {t.secondaryCta}
-          </Link>
+          </Button>
         </div>
       </div>
 

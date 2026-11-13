@@ -39,7 +39,7 @@ export default function Header({ locale }: HeaderProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-ivory/98 backdrop-blur-md shadow-lg border-b border-gold/30'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gold/30'
           : 'bg-transparent'
       }`}
     >
@@ -112,7 +112,7 @@ export default function Header({ locale }: HeaderProps) {
             isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-6 px-2 space-y-1 border-t border-gold/20 bg-ivory/50 backdrop-blur-sm">
+          <div className="py-6 px-2 space-y-1 border-t border-gold/20 bg-white/50 backdrop-blur-sm">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (

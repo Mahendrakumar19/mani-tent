@@ -7,6 +7,7 @@ import { generatePageMetadata } from '@/lib/seo';
 import { Section, SectionHeader } from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import Button from '@/components/Button';
 
 export function generateMetadata({
   params,
@@ -259,12 +260,13 @@ export default function ServicesPage({ params }: { params: { locale: string } })
           }
           variant="dark"
         />
-        <a
+        <Button
           href={`/${locale}/contact`}
-          className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gold text-charcoal font-semibold text-base hover:bg-gold/90 transition-colors shadow-lg shadow-gold/20"
+          variant="primary"
+          size="md"
         >
           {locale === 'hi' ? 'संपर्क करें' : 'Get in Touch'}
-        </a>
+        </Button>
       </Section>
     </div>
   );

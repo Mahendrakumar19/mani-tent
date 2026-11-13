@@ -8,6 +8,7 @@ import { Section, SectionHeader } from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
 import FAQAccordion from '@/components/FAQAccordion';
 import Hero from '@/components/Hero';
+import Button from '@/components/Button';
 
 export function generateMetadata({
   params,
@@ -131,20 +132,20 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         </div>
         <p className="text-sm text-white/80 mb-8 text-center">{t.gallerySection.note}</p>
         <div className="flex justify-center">
-        <Link
-          href={`/${locale}/gallery`}
-          className="inline-flex items-center text-gold hover:text-gold/80 hover:gap-3 text-base font-semibold transition-all duration-300 group"
-        >
-          {t.gallerySection.cta}
-          <svg
-            className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          <Link
+            href={`/${locale}/gallery`}
+            className="inline-flex items-center text-gold hover:text-gold/80 hover:gap-3 text-base font-semibold transition-all duration-300 group"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </Link>
+            {t.gallerySection.cta}
+            <svg
+              className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
       </Section>
 
@@ -220,13 +221,15 @@ export default function HomePage({ params }: { params: { locale: string } }) {
           title={t.finalCta.title}
           subtitle={t.finalCta.text}
           align="center"
+          variant="dark"
         />
-        <Link
+        <Button
           href={`/${locale}/contact`}
-          className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gold text-charcoal font-bold text-lg hover:bg-gold/90 hover:shadow-2xl hover:shadow-gold/40 hover:scale-105 transition-all duration-300 shadow-lg shadow-gold/20"
+          variant="primary"
+          size="lg"
         >
           {t.finalCta.btn}
-        </Link>
+        </Button>
       </Section>
     </div>
   );
