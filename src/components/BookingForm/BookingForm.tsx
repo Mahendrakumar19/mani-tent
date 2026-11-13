@@ -243,8 +243,8 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           value={formData.customerName}
           onChange={handleChange}
           placeholder={labels.customerNamePlaceholder}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
-            errors.customerName ? 'border-red-500' : 'border-beige'
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 transition-all duration-300 ${
+            errors.customerName ? 'border-red-500 bg-red-50/30' : 'border-gold/30 hover:border-gold/50 bg-white'
           }`}
         />
         {errors.customerName && (
@@ -263,8 +263,8 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           value={formData.phone}
           onChange={handleChange}
           placeholder={labels.phonePlaceholder}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
-            errors.phone ? 'border-red-500' : 'border-beige'
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 transition-all duration-300 ${
+            errors.phone ? 'border-red-500 bg-red-50/30' : 'border-gold/30 hover:border-gold/50 bg-white'
           }`}
         />
         {errors.phone && (
@@ -284,8 +284,8 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           name="eventDate"
           value={formData.eventDate}
           onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal ${
-            errors.eventDate ? 'border-red-500' : 'border-beige'
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal transition-all duration-300 ${
+            errors.eventDate ? 'border-red-500 bg-red-50/30' : 'border-gold/30 hover:border-gold/50 bg-white'
           }`}
         />
         {errors.eventDate && (
@@ -307,8 +307,8 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           onChange={handleChange}
           placeholder={labels.guestCountPlaceholder}
           min="1"
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
-            errors.guestCount ? 'border-red-500' : 'border-beige'
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 transition-all duration-300 ${
+            errors.guestCount ? 'border-red-500 bg-red-50/30' : 'border-gold/30 hover:border-gold/50 bg-white'
           }`}
         />
         {errors.guestCount && (
@@ -327,13 +327,13 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
 
 
       {/* Submit Button */}
-      <div className="pt-4">
+      <div className="pt-6">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full px-6 py-3 bg-gold text-charcoal font-semibold rounded-lg hover:bg-gold/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="w-full px-6 py-4 bg-gradient-to-r from-gold to-gold/80 text-charcoal font-bold rounded-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 active:scale-95 border border-gold/50"
         >
-          {isSubmitting ? labels.submitting : labels.submitBtn}
+          {isSubmitting ? '⏳ ' + labels.submitting : '📝 ' + labels.submitBtn}
         </button>
       </div>
     </form>

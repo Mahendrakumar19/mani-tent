@@ -28,10 +28,10 @@ export default function ServiceCard({ title, description, image, href, locale }:
   return (
     <Link
       href={href}
-      className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-beige/60 hover:border-gold/40 hover:translate-y-[-8px]"
+      className="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gold/20 hover:border-gold/50 hover:translate-y-[-8px] hover:scale-105"
       style={cardStyles}
     >
-      <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden bg-white/50">
+      <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden bg-gradient-to-br from-gold/10 to-white/50">
         <Image
           src={image}
           alt={title[locale]}
