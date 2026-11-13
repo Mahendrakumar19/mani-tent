@@ -257,6 +257,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
               ? 'किसी भी सेवा के बारे में और जानें या एक विशेष पूछताछ के लिए हमसे संपर्क करें।'
               : 'Learn more about any service or contact us for a special inquiry.'
           }
+          variant="dark"
         />
         <a
           href={`/${locale}/contact`}

@@ -388,7 +388,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         <SectionHeader
           title={
             locale === 'hi'
-              ? 'सामान्य प्रश्न?'
+              ? 'सामण्य प्रश्न?'
               : 'Have Questions?'
           }
           subtitle={
@@ -396,6 +396,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               ? 'होमपेज पर हमारे अक्सर पूछे जाने वाले प्रश्नों के अनुभाग को देखें।'
               : 'Check our FAQ section on the home page for common questions.'
           }
+          variant="dark"
         />
         <Link
           href={`/${locale}`}

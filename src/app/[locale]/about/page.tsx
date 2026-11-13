@@ -226,6 +226,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
               ? 'आज ही हमसे संपर्क करें और अपनी विशेष दिन के लिए एक सुंदर व्यवस्था बनाएं।'
               : 'Contact us today to create a beautiful arrangement for your special day.'
           }
+          variant="dark"
         />
         <a
           href={`/${locale}/contact`}

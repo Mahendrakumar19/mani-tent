@@ -32,7 +32,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${noto.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-inter bg-ivory text-charcoal antialiased">{children}</body>
+      <body className="font-inter bg-white text-charcoal antialiased">{children}</body>
     </html>
   );
 }

@@ -107,6 +107,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
           title={t.gallerySection.title}
           subtitle={t.gallerySection.subtitle}
           align="center"
+          variant="dark"
         />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10">
           {CONFIRMED_SERVICES.slice(0, 5).map((service, index) => (
@@ -128,7 +129,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
             </div>
           ))}
         </div>
-        <p className="text-sm text-white/60 mb-8 text-center">{t.gallerySection.note}</p>
+        <p className="text-sm text-white/80 mb-8 text-center">{t.gallerySection.note}</p>
         <div className="flex justify-center">
         <Link
           href={`/${locale}/gallery`}

@@ -311,6 +311,7 @@ export default function ServiceDetailPage({
               ? 'आज ही हमसे संपर्क करें और अपनी सेवा की यात्रा शुरू करें।'
               : 'Contact us today and let\'s start planning your perfect celebration.'
           }
+          variant="dark"
         />
         <Link
           href={`/${locale}/contact`}

@@ -24,6 +24,7 @@ interface SectionHeaderProps {
   title: string;
   subtitle?: string;
   align?: 'left' | 'center';
+  variant?: 'light' | 'dark';
 }
 
 export function SectionHeader({
@@ -31,6 +32,7 @@ export function SectionHeader({
   title,
   subtitle,
   align = 'left',
+  variant = 'light',
 }: SectionHeaderProps) {
   return (
     <div className={cn('mb-12 md:mb-16 lg:mb-20', align === 'center' && 'text-center max-w-3xl mx-auto')}>
@@ -39,11 +41,17 @@ export function SectionHeader({
           {eyebrow}
         </p>
       )}
-      <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal leading-tight animate-fade-in-delay">
+      <h2 className={cn(
+        'font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight animate-fade-in-delay',
+        variant === 'dark' ? 'text-white' : 'text-charcoal'
+      )}>
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 md:mt-6 lg:mt-8 text-base md:text-lg text-charcoal/80 leading-relaxed max-w-2xl animate-fade-in-delay-2">
+        <p className={cn(
+          'mt-4 md:mt-6 lg:mt-8 text-base md:text-lg leading-relaxed max-w-2xl animate-fade-in-delay-2',
+          variant === 'dark' ? 'text-white/90' : 'text-charcoal/80'
+        )}>
           {subtitle}
         </p>
       )}
