@@ -272,25 +272,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
         )}
       </div>
 
-      {/* Email */}
-      <div>
-        <label className="block text-sm font-semibold text-charcoal mb-2">
-          {labels.emailLabel}
-        </label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder={labels.emailPlaceholder}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
-            errors.email ? 'border-red-500' : 'border-beige'
-          }`}
-        />
-        {errors.email && (
-          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-        )}
-      </div>
+
 
       {/* Event Date */}
       <div>
@@ -311,30 +293,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
         )}
       </div>
 
-      {/* Event Type */}
-      <div>
-        <label className="block text-sm font-semibold text-charcoal mb-2">
-          {labels.eventTypeLabel} <span className="text-red-500">*</span>
-        </label>
-        <select
-          name="eventType"
-          value={formData.eventType}
-          onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal ${
-            errors.eventType ? 'border-red-500' : 'border-beige'
-          }`}
-        >
-          <option value="">{labels.eventTypePlaceholder}</option>
-          {serviceOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        {errors.eventType && (
-          <p className="text-red-500 text-sm mt-1">{errors.eventType}</p>
-        )}
-      </div>
+
 
       {/* Guest Count */}
       <div>
@@ -357,90 +316,15 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
         )}
       </div>
 
-      {/* Event Details */}
-      <div>
-        <label className="block text-sm font-semibold text-charcoal mb-2">
-          {labels.eventDetailsLabel}
-        </label>
-        <textarea
-          name="eventDetails"
-          value={formData.eventDetails}
-          onChange={handleChange}
-          placeholder={labels.eventDetailsPlaceholder}
-          rows={4}
-          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40"
-        />
-      </div>
 
-      {/* Preferred Contact Method */}
-      <div>
-        <label className="block text-sm font-semibold text-charcoal mb-3">
-          {labels.preferredContactLabel}
-        </label>
-        <div className="space-y-2">
-          {['phone', 'email', 'whatsapp'].map((method) => (
-            <label key={method} className="flex items-center">
-              <input
-                type="radio"
-                name="preferredContact"
-                value={method}
-                checked={formData.preferredContact === method}
-                onChange={handleChange}
-                className="w-4 h-4 accent-gold cursor-pointer"
-              />
-              <span className="ml-3 text-charcoal">
-                {labels[`${method}Option` as keyof typeof labels]}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div>
 
-      {/* Budget Range */}
-      <div>
-        <label className="block text-sm font-semibold text-charcoal mb-2">
-          {labels.budgetRangeLabel}
-        </label>
-        <input
-          type="text"
-          name="budgetRange"
-          value={formData.budgetRange}
-          onChange={handleChange}
-          placeholder={labels.budgetRangePlaceholder}
-          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40"
-        />
-      </div>
 
-      {/* Additional Requests */}
-      <div>
-        <label className="block text-sm font-semibold text-charcoal mb-2">
-          {labels.additionalRequestsLabel}
-        </label>
-        <textarea
-          name="additionalRequests"
-          value={formData.additionalRequests}
-          onChange={handleChange}
-          placeholder={labels.additionalRequestsPlaceholder}
-          rows={3}
-          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40"
-        />
-      </div>
 
-      {/* Honeycomb/Glamping */}
-      <div>
-        <label className="flex items-center">
-          <input
-            type="checkbox"
-            name="honeycombGlamping"
-            checked={formData.honeycombGlamping}
-            onChange={handleChange}
-            className="w-4 h-4 accent-gold cursor-pointer"
-          />
-          <span className="ml-3 text-charcoal font-medium">
-            {labels.honeycombGlampingLabel}
-          </span>
-        </label>
-      </div>
+
+
+
+
+
 
       {/* Submit Button */}
       <div className="pt-4">
