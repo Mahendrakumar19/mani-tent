@@ -97,9 +97,9 @@ export default function AdminDashboardPage() {
   return (
     <div className="p-8 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold text-charcoal mb-2">Admin Dashboard</h1>
-        <p className="text-charcoal/60">Welcome back! Manage your website content.</p>
+      <div className="mb-12 pb-6 border-b-2 border-gold/20">
+        <h1 className="text-4xl font-bold text-charcoal font-playfair mb-2">📊 Admin Dashboard</h1>
+        <p className="text-charcoal/60">Welcome back! Manage your website content and bookings.</p>
       </div>
 
       {/* Stats Grid */}
@@ -139,8 +139,8 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-xl shadow-md p-8">
-        <h2 className="text-2xl font-bold text-charcoal mb-6">Quick Actions</h2>
+      <div className="bg-gradient-to-br from-white to-gold/2 rounded-2xl shadow-md p-8 border border-gold/10">
+        <h2 className="text-2xl font-bold text-charcoal mb-6 flex items-center gap-2">⚡ Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <QuickActionCard
             href="/admin/business-info"
@@ -188,8 +188,8 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Info Section */}
-      <div className="mt-12 bg-gold/5 border border-gold/20 rounded-xl p-6">
-        <h3 className="font-bold text-charcoal mb-3">ℹ️ How to Use This Admin Panel</h3>
+      <div className="mt-12 bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/30 rounded-2xl p-6 shadow-sm">
+        <h3 className="font-bold text-charcoal mb-3 text-lg">ℹ️ How to Use This Admin Panel</h3>
         <ul className="text-charcoal/80 space-y-2">
           <li>• <strong>Business Info:</strong> Update your company details, address, and contact information</li>
           <li>• <strong>Services:</strong> Edit service descriptions, images, and checklists</li>
@@ -210,9 +210,9 @@ interface StatCardProps {
 
 function StatCard({ icon, label, value }: StatCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm p-6 border border-beige/50">
+    <div className="bg-gradient-to-br from-white to-gold/5 rounded-2xl shadow-md p-6 border border-gold/20 hover:shadow-lg hover:border-gold/40 transition-all duration-300 transform hover:scale-105">
       <div className="text-4xl mb-3">{icon}</div>
-      <p className="text-sm text-charcoal/60 mb-1">{label}</p>
+      <p className="text-xs text-charcoal/60 uppercase tracking-wide mb-2">{label}</p>
       <p className="text-2xl font-bold text-charcoal">{value}</p>
     </div>
   );
@@ -229,7 +229,7 @@ function QuickActionCard({ href, icon, title, description }: QuickActionCardProp
   return (
     <a
       href={href}
-      className="block p-4 rounded-lg border border-beige/50 hover:border-gold/50 hover:shadow-md transition-all bg-white hover:bg-gold/2"
+      className="block p-4 rounded-xl border border-gold/20 hover:border-gold/50 hover:shadow-lg hover:bg-gold/10 transition-all duration-300 bg-white transform hover:scale-105 hover:-translate-y-1"
     >
       <div className="text-3xl mb-2">{icon}</div>
       <h3 className="font-bold text-charcoal mb-1">{title}</h3>

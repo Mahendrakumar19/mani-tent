@@ -139,7 +139,8 @@ export default function AdminBookingsPage() {
       )}
 
       {/* Filters */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div className="bg-gradient-to-br from-white to-gold/2 rounded-2xl shadow-md p-6 mb-8 border border-gold/10">
+        <h3 className="text-lg font-bold text-charcoal mb-4 flex items-center gap-2">🔍 Filter Bookings</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-semibold text-charcoal mb-2">
@@ -148,7 +149,7 @@ export default function AdminBookingsPage() {
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
-              className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+              className="w-full px-4 py-2 border border-gold/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold bg-white hover:border-gold/50 transition-colors"
             >
               <option value="">All Statuses</option>
               <option value="new">New</option>
@@ -168,7 +169,7 @@ export default function AdminBookingsPage() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search bookings..."
-              className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+              className="w-full px-4 py-2 border border-gold/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold bg-white hover:border-gold/50 transition-colors"
             />
           </div>
 
@@ -178,9 +179,9 @@ export default function AdminBookingsPage() {
                 setSelectedStatus('');
                 setSearchTerm('');
               }}
-              className="w-full px-4 py-2 bg-gray-200 text-charcoal rounded-lg hover:bg-gray-300 transition-colors"
+              className="w-full px-4 py-2 bg-gold/20 text-charcoal rounded-lg hover:bg-gold/30 transition-all duration-300 font-medium border border-gold/30 hover:border-gold/50"
             >
-              Clear Filters
+              🔄 Clear Filters
             </button>
           </div>
         </div>
@@ -188,14 +189,14 @@ export default function AdminBookingsPage() {
 
       {/* Bookings Table/List */}
       {filteredBookings.length === 0 ? (
-        <div className="bg-white rounded-lg shadow-md p-12 text-center">
-          <p className="text-lg text-charcoal/60">No bookings found</p>
+        <div className="bg-white rounded-2xl shadow-md p-12 text-center border border-gold/10">
+          <p className="text-lg text-charcoal/60">📊 No bookings found</p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gold/10">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-charcoal text-ivory">
+              <thead className="bg-gradient-to-r from-charcoal to-charcoal/90 text-ivory">
                 <tr>
                   <th className="px-6 py-3 text-left text-sm font-semibold">
                     Name

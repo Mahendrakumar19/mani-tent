@@ -57,7 +57,14 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-charcoal to-charcoal/80 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 right-10 w-72 h-72 bg-gold rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold/50 rounded-full blur-3xl"></div>
+      </div>
+      
+      {/* Content */}
       <div className="w-full max-w-md">
         <div className="bg-charcoal/60 border border-gold/30 rounded-2xl p-8 shadow-2xl">
           {/* Logo */}
@@ -92,16 +99,16 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isLoading || !password}
-              className="w-full bg-gold hover:bg-gold/90 disabled:bg-gold/50 text-charcoal font-bold py-3 rounded-lg transition-colors disabled:cursor-not-allowed"
+              className="w-full bg-gold hover:bg-gold/90 disabled:bg-gold/50 text-charcoal font-bold py-3 rounded-lg transition-all duration-300 disabled:cursor-not-allowed hover:shadow-xl hover:scale-105 active:scale-95"
             >
-              {isLoading ? 'Logging in...' : 'Login to Admin Panel'}
+              {isLoading ? '⏳ Logging in...' : '🔓 Login to Admin Panel'}
             </button>
           </form>
 
-          {/* Info */}
-          <div className="mt-8 p-4 bg-gold/10 border border-gold/20 rounded-lg">
+          {/* Security Note */}
+          <div className="mt-8 p-4 bg-blue-600/10 border border-blue-400/20 rounded-lg">
             <p className="text-xs text-ivory/60 text-center">
-              Default password: <code className="text-gold font-mono">admin123</code>
+              🔐 Keep your admin password confidential. Never share it with unauthorized users.
             </p>
           </div>
         </div>

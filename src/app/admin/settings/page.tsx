@@ -75,12 +75,18 @@ export default function SettingsPage() {
 
   return (
     <div className="p-8 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold text-charcoal mb-8">Admin Settings</h1>
+      {/* Header */}
+      <div className="mb-10">
+        <h1 className="text-4xl font-bold text-charcoal font-playfair mb-2">⚙️ Admin Settings</h1>
+        <p className="text-charcoal/60">Manage your admin account security and preferences</p>
+      </div>
 
       {/* Change Password */}
-      <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-        <h2 className="text-2xl font-bold text-charcoal mb-6">Change Admin Password</h2>
-        <p className="text-charcoal/70 mb-6">Keep your admin password secure and change it regularly.</p>
+      <div className="bg-gradient-to-br from-white to-gold/5 rounded-2xl shadow-lg p-8 mb-8 border border-gold/20">
+        <h2 className="text-2xl font-bold text-charcoal mb-2 flex items-center gap-2">
+          🔐 Change Admin Password
+        </h2>
+        <p className="text-charcoal/60 mb-8 text-sm">Update your admin password regularly for better security. Use a strong, unique password.</p>
 
         <FormInput
           label="New Password"
@@ -105,15 +111,15 @@ export default function SettingsPage() {
         <button
           onClick={handleSavePassword}
           disabled={isSaving || !newPassword || !confirmPassword}
-          className="px-6 py-3 bg-gold hover:bg-gold/90 disabled:bg-gold/50 text-charcoal font-bold rounded-lg transition-colors disabled:cursor-not-allowed"
+          className="w-full px-6 py-3 bg-gold hover:bg-gold/90 disabled:bg-gold/50 text-charcoal font-bold rounded-lg transition-all duration-300 disabled:cursor-not-allowed hover:shadow-lg hover:scale-105 active:scale-95"
         >
-          {isSaving ? 'Saving...' : 'Update Password'}
+          {isSaving ? '⏳ Saving...' : '💾 Update Password'}
         </button>
       </div>
 
       {/* Info Section */}
-      <div className="bg-gold/5 border border-gold/20 rounded-xl p-6">
-        <h3 className="font-bold text-charcoal mb-4">ℹ️ Admin Panel Information</h3>
+      <div className="bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/30 rounded-2xl p-6 shadow-sm">
+        <h3 className="font-bold text-charcoal mb-4 text-lg">ℹ️ Admin Panel Information</h3>
         <ul className="text-charcoal/80 space-y-2 text-sm">
           <li>• <strong>Data Storage:</strong> All content is stored in JSON files located in <code className="bg-charcoal/10 px-2 py-1 rounded">/public/data/</code></li>
           <li>• <strong>No Database:</strong> This admin panel uses file-based storage for simplicity</li>
