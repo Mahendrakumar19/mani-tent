@@ -86,7 +86,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
                         {post.title[locale]}
                       </h3>
                     </Link>
-                    <p className="text-base leading-relaxed text-brown/90 mb-4">
+                    <p className="text-base leading-relaxed text-charcoal/90 mb-4">
                       {post.summary[locale]}
                     </p>
                     <Link
@@ -115,14 +115,14 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-lg text-brown/80 mb-6">
+            <p className="text-lg text-charcoal/80 mb-6">
               {locale === 'hi'
                 ? 'जल्द ही नई ब्लॉग पोस्ट आने वाली हैं।'
                 : 'New blog posts coming soon.'}
             </p>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-charcoal text-ivory font-semibold text-sm hover:bg-charcoal/90 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-charcoal text-white font-semibold text-sm hover:bg-charcoal/90 transition-colors"
             >
               {locale === 'hi' ? 'संपर्क करें' : 'Get in Touch'}
             </Link>
@@ -211,7 +211,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
                 {topic.title}
               </h3>
-              <p className="text-sm text-brown/80">{topic.desc}</p>
+              <p className="text-sm text-charcoal/80">{topic.desc}</p>
             </div>
           ))}
         </div>
@@ -219,13 +219,13 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
 
       {/* Subscribe Section */}
       <Section>
-        <div className="max-w-2xl bg-charcoal text-ivory rounded-lg p-8 md:p-12 text-center">
+        <div className="max-w-2xl bg-charcoal text-white rounded-lg p-8 md:p-12 text-center">
           <h3 className="font-playfair text-2xl font-semibold mb-4">
             {locale === 'hi'
               ? 'नई पोस्ट के लिए अपडेट पाएं'
               : 'Get Updates on New Posts'}
           </h3>
-          <p className="text-base text-ivory/90 mb-6">
+          <p className="text-base text-white/90 mb-6">
             {locale === 'hi'
               ? 'हमारी ब्लॉग पोस्ट्स के बारे में जानने के लिए हमसे संपर्क करें।'
               : 'Contact us to learn about our latest blog posts and updates.'}
@@ -257,7 +257,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
             <h3 className="font-playfair text-lg font-semibold text-charcoal group-hover:text-gold transition-colors mb-2">
               {locale === 'hi' ? 'सेवाएं' : 'Our Services'}
             </h3>
-            <p className="text-sm text-brown/80 mb-4">
+            <p className="text-sm text-charcoal/80 mb-4">
               {locale === 'hi'
                 ? 'सभी सेवाओं को जानें जो हम प्रदान करते हैं।'
                 : 'Learn about all the services we offer.'}
@@ -276,7 +276,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
             <h3 className="font-playfair text-lg font-semibold text-charcoal group-hover:text-gold transition-colors mb-2">
               {locale === 'hi' ? 'गैलरी' : 'Gallery'}
             </h3>
-            <p className="text-sm text-brown/80 mb-4">
+            <p className="text-sm text-charcoal/80 mb-4">
               {locale === 'hi'
                 ? 'हमारी सजावट प्रेरणा गैलरी देखें।'
                 : 'Explore our decoration inspiration gallery.'}

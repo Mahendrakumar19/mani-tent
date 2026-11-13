@@ -51,7 +51,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
           title={locale === 'hi' ? 'हमारे बारे में' : 'About MANI TENT HOUSE'}
           align="center"
         />
-        <p className="text-center text-base md:text-lg leading-relaxed text-brown/90 max-w-3xl mx-auto">
+        <p className="text-center text-base md:text-lg leading-relaxed text-charcoal/90 max-w-3xl mx-auto">
           {locale === 'hi'
             ? 'MANI TENT HOUSE बिलासपुर, छत्तीसगढ़ में स्थित एक विश्वसनीय वेडिंग टेंट और सजावट सेवा प्रदाता है। हम हर शादी को विशेष और यादगार बनाने के लिए प्रतिबद्ध हैं।'
             : 'MANI TENT HOUSE is a trusted wedding tent and decoration service provider in Bilaspur, Chhattisgarh. We are committed to making every celebration special and memorable.'}
@@ -68,12 +68,12 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
               {locale === 'hi' ? 'कैसे शुरु हुआ' : 'How We Started'}
             </h3>
-            <p className="text-base leading-relaxed text-brown/90 mb-4">
+            <p className="text-base leading-relaxed text-charcoal/90 mb-4">
               {locale === 'hi'
-                ? 'MANI TENT HOUSE की स्थापना शादी के आयोजनों को सुंदर और विशेष बनाने की दृष्टि से की गई थी। हम मानते हैं कि हर समारोह अद्वितीय है और इसे सावधानी से योजना बनाई जानी चाहिए।'
+                ? 'MANI TENT HOUSE की स्थापना शादी के आयोजनों को सुंदर और विशेष बनाने की दृष्टि से की गई थी। हम मानते हैं कि हर समारोह अद्वितीय है और इसे सावधानी से योजना बनाई जानी चाहिए.'
                 : 'MANI TENT HOUSE was founded with the vision of making wedding celebrations beautiful and special. We believe every occasion is unique and deserves careful planning.'}
             </p>
-            <p className="text-base leading-relaxed text-brown/90">
+            <p className="text-base leading-relaxed text-charcoal/90">
               {locale === 'hi'
                 ? 'हमारी टीम अनुभवी पेशेवरों से मिलकर बनी है जो आपकी कल्पना को वास्तविकता में बदलने के लिए समर्पित है।'
                 : 'Our team consists of experienced professionals dedicated to turning your vision into reality.'}
@@ -83,12 +83,12 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
               {locale === 'hi' ? 'हमारा दृष्टिकोण' : 'Our Approach'}
             </h3>
-            <p className="text-base leading-relaxed text-brown/90 mb-4">
+            <p className="text-base leading-relaxed text-charcoal/90 mb-4">
               {locale === 'hi'
-                ? 'हम प्रत्येक परियोजना में विस्तार पर ध्यान देते हैं। आपकी पसंद, रंग, शैली और सांस्कृतिक महत्व को समझना हमारा पहला कदम है।'
+                ? 'हम प्रत्येक परियोजना में विस्तार पर ध्यान देते हैं। आपकी पसंद, रंग, शैली और सांस्कृतिक महत्व को समझना हमारा पहला कदम है.'
                 : 'We pay attention to every detail in each project. Understanding your preferences, colors, style and cultural significance is our first step.'}
             </p>
-            <p className="text-base leading-relaxed text-brown/90">
+            <p className="text-base leading-relaxed text-charcoal/90">
               {locale === 'hi'
                 ? 'आपके आयोजन स्थल, तारीख और आवश्यकताओं पर विचार करके, हम एक सुंदर व्यवस्था तैयार करते हैं जो आपके समारोह को स्मरणीय बनाता है।'
                 : 'By considering your venue, date and requirements, we create beautiful arrangements that make your celebration memorable.'}
@@ -158,7 +158,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
                 {item.title}
               </h3>
-              <p className="text-sm text-brown/80 leading-relaxed">
+              <p className="text-sm text-charcoal/80 leading-relaxed">
                 {item.desc}
               </p>
             </div>
@@ -171,7 +171,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
         <SectionHeader
           title={locale === 'hi' ? 'हमारी सेवाएं' : 'Our Services'}
         />
-        <p className="text-base leading-relaxed text-brown/90 mb-8 max-w-3xl">
+        <p className="text-base leading-relaxed text-charcoal/90 mb-8 max-w-3xl">
           {locale === 'hi'
             ? 'हम शादी के आयोजनों के लिए व्यापक सेवाएं प्रदान करते हैं:'
             : 'We provide comprehensive services for wedding occasions:'}
@@ -211,14 +211,14 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
               <h3 className="font-playfair text-xl font-semibold text-charcoal mb-2">
                 {service.title}
               </h3>
-              <p className="text-base text-brown/80">{service.desc}</p>
+              <p className="text-base text-charcoal/80">{service.desc}</p>
             </div>
           ))}
         </div>
       </Section>
 
       {/* Contact CTA */}
-      <Section className="bg-charcoal text-ivory text-center">
+      <Section className="bg-charcoal text-white text-center">
         <SectionHeader
           title={locale === 'hi' ? 'अपने समारोह की योजना बनाएं' : 'Plan Your Celebration'}
           subtitle={

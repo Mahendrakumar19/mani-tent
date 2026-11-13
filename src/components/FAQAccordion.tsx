@@ -50,7 +50,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               className={`overflow-hidden transition-all duration-500 ease-in-out ${  isOpen ? 'max-h-96' : 'max-h-0'
               }`}
             >
-              <p className="px-6 pb-5 pt-2 text-base text-brown/70 leading-relaxed">
+              <p className="px-6 pb-5 pt-2 text-base text-charcoal/80 leading-relaxed">
                 {item.a}
               </p>
             </div>

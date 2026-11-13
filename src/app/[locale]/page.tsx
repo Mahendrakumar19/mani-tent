@@ -41,12 +41,12 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         <SectionHeader title={t.intro.title} />
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           <div className="space-y-4">
-            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-brown/85">
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-charcoal/85">
               {t.intro.body1}
             </p>
           </div>
           <div className="space-y-4">
-            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-brown/85">
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-charcoal/85">
               {t.intro.body2}
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors">
                 {reason.title}
               </h3>
-              <p className="text-sm text-brown/75 leading-relaxed">
+              <p className="text-sm text-charcoal/75 leading-relaxed">
                 {reason.desc}
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Decoration Inspiration Gallery */}
-      <Section className="bg-charcoal/95 text-ivory">
+      <Section className="bg-charcoal/95 text-white">
         <SectionHeader
           title={t.gallerySection.title}
           subtitle={t.gallerySection.subtitle}
@@ -128,7 +128,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
             </div>
           ))}
         </div>
-        <p className="text-sm text-ivory/50 mb-8 text-center">{t.gallerySection.note}</p>
+        <p className="text-sm text-white/60 mb-8 text-center">{t.gallerySection.note}</p>
         <div className="flex justify-center">
         <Link
           href={`/${locale}/gallery`}
@@ -161,7 +161,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
                   {step.title}
                 </h3>
               </div>
-              <p className="text-sm text-brown/75 leading-relaxed text-center">
+              <p className="text-sm text-charcoal/75 leading-relaxed text-center">
                 {step.desc}
               </p>
             </div>
@@ -173,7 +173,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <Section>
         <SectionHeader title={t.locationSection.title} align="center" />
         <div className="max-w-3xl mx-auto bg-gold/3 rounded-xl p-8 md:p-10 border border-gold/20">
-          <p className="text-base md:text-lg leading-relaxed text-brown/80 text-center">
+          <p className="text-base md:text-lg leading-relaxed text-charcoal/80 text-center">
             {t.locationSection.text}
           </p>
         </div>
@@ -194,8 +194,8 @@ export default function HomePage({ params }: { params: { locale: string } }) {
               </h3>
               <ul className="space-y-3">
                 {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-sm text-brown/70 flex items-start gap-3 leading-relaxed">
-                    <span className="text-gold/80 mt-1 flex-shrink-0 font-bold">✓</span>
+                  <li key={itemIndex} className="text-sm text-charcoal/70 flex items-start gap-3 leading-relaxed">
+                    <span className="text-gold mt-1 flex-shrink-0 font-bold">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -214,7 +214,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Final CTA */}
-      <Section className="bg-gradient-to-b from-charcoal/95 to-charcoal text-ivory text-center">
+      <Section className="bg-gradient-to-b from-charcoal/95 to-charcoal text-white text-center">
         <SectionHeader
           title={t.finalCta.title}
           subtitle={t.finalCta.text}

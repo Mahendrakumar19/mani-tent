@@ -31,7 +31,7 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
         className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors ${
           currentLocale === 'en'
             ? 'bg-gold text-charcoal shadow-sm'
-            : 'text-brown hover:text-gold'
+            : 'text-charcoal hover:text-gold'
         }`}
       >
         English
@@ -41,7 +41,7 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
         className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors ${
           currentLocale === 'hi'
             ? 'bg-gold text-charcoal shadow-sm'
-            : 'text-brown hover:text-gold'
+            : 'text-charcoal hover:text-gold'
         }`}
       >
         हिंदी

@@ -45,7 +45,7 @@ export default function ServiceCard({ title, description, image, href, locale }:
         <h3 className="font-playfair text-lg sm:text-xl font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors line-clamp-2">
           {title[locale]}
         </h3>
-        <p className="text-sm text-brown/75 line-clamp-3 mb-4 leading-relaxed">
+        <p className="text-sm text-charcoal/75 line-clamp-3 mb-4 leading-relaxed">
           {description[locale]}
         </p>
         <span className="inline-flex items-center text-sm font-semibold text-gold group-hover:text-gold/80 transition-colors">

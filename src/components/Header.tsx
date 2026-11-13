@@ -60,7 +60,7 @@ export default function Header({ locale }: HeaderProps) {
                   key={item.href}
                   href={item.href}
                   className={`text-sm font-medium transition-all duration-300 relative pb-2 ${
-                    isActive ? 'text-gold' : 'text-brown hover:text-gold'
+                    isActive ? 'text-gold' : 'text-charcoal hover:text-gold'
                   }`}
                 >
                   {item.label}
@@ -120,7 +120,7 @@ export default function Header({ locale }: HeaderProps) {
                   key={item.href}
                   href={item.href}
                   className={`block py-3 px-3 text-base font-medium rounded-lg transition-colors ${
-                    isActive ? 'text-gold bg-gold/10' : 'text-brown hover:bg-gold/5'
+                    isActive ? 'text-gold bg-gold/10' : 'text-charcoal hover:bg-gold/5'
                   }`}
                 >
                   {item.label}

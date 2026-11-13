@@ -14,7 +14,7 @@
 
 body {
   background-color: var(--color-ivory);
-  color: var(--color-brown);
+  color: var(--color-charcoal);
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
 }
@@ -44,4 +44,38 @@ textarea:focus-visible,
 select:focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
+}
+
+/* Form input text color */
+input,
+textarea,
+select {
+  color: var(--color-charcoal);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-brown);
+  opacity: 0.5;
+}
+
+/* Ensure text is readable on all backgrounds */
+a {
+  color: inherit;
+}
+
+/* Dark background text */
+.bg-charcoal,
+.bg-charcoal\/95,
+.bg-charcoal\/80,
+.bg-charcoal\/60,
+.bg-charcoal\/50 {
+  color: var(--color-ivory);
+}
+
+/* White background text */
+.bg-white,
+.bg-ivory,
+.bg-beige {
+  color: var(--color-charcoal);
 }

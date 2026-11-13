@@ -106,7 +106,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                 {info.title}
               </h3>
               <p className="font-semibold text-charcoal mb-2">{info.content}</p>
-              <p className="text-sm text-brown/80">{info.desc}</p>
+              <p className="text-sm text-charcoal/80">{info.desc}</p>
             </div>
           ))}
         </div>
@@ -168,7 +168,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     ? 'आपका नाम'
                     : 'Your full name'
                 }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-brown/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
                 required
               />
             </div>
@@ -185,7 +185,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     ? 'आपका फोन नंबर'
                     : 'Your phone number'
                 }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-brown/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
                 required
               />
             </div>
@@ -202,7 +202,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     ? 'आपकी ईमेल'
                     : 'Your email address'
                 }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-brown/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
               />
             </div>
 
@@ -229,7 +229,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     ? 'आयोजन स्थान'
                     : 'Event location/venue'
                 }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-brown/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
               />
             </div>
 
@@ -254,7 +254,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                       value={service.value}
                       className="w-4 h-4 rounded border-beige text-gold focus:ring-2 focus:ring-gold"
                     />
-                    <span className="text-sm text-brown">{service.label}</span>
+                    <span className="text-sm text-charcoal">{service.label}</span>
                   </label>
                 ))}
               </div>
@@ -272,7 +272,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     ? 'अनुमानित मेहमान संख्या'
                     : 'Estimated guest count'
                 }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-brown/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
               />
             </div>
 
@@ -288,7 +288,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     : 'Share your requirements and ideas...'
                 }
                 rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-brown/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all resize-none"
+                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all resize-none"
               />
             </div>
 
@@ -299,7 +299,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                 className="w-4 h-4 rounded border-beige text-gold focus:ring-2 focus:ring-gold mt-1 flex-shrink-0"
                 required
               />
-              <span className="text-xs text-brown/80">
+              <span className="text-xs text-charcoal/80">
                 {t.form.consentText}
               </span>
             </label>
@@ -307,13 +307,13 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full px-6 py-3 rounded-lg bg-charcoal text-ivory font-semibold text-base hover:bg-charcoal/90 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
+              className="w-full px-6 py-3 rounded-lg bg-charcoal text-white font-semibold text-base hover:bg-charcoal/90 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
             >
               {t.form.submitBtn}
             </button>
 
             {/* Note */}
-            <p className="text-xs text-brown/60 text-center">
+            <p className="text-xs text-charcoal/60 text-center">
               {locale === 'hi'
                 ? '* आवश्यक फील्ड। हम जल्द ही आपसे संपर्क करेंगे।'
                 : '* Required fields. We\'ll get back to you soon.'}
@@ -377,14 +377,14 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
                 {item.title}
               </h3>
-              <p className="text-sm text-brown/80">{item.desc}</p>
+              <p className="text-sm text-charcoal/80">{item.desc}</p>
             </div>
           ))}
         </div>
       </Section>
 
       {/* FAQ CTA */}
-      <Section className="bg-charcoal text-ivory text-center rounded-lg">
+      <Section className="bg-charcoal text-white text-center rounded-lg">
         <SectionHeader
           title={
             locale === 'hi'
@@ -424,7 +424,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'धन्यवाद!' : 'Thank You!'}
           </h3>
-          <p className="text-base leading-relaxed text-brown/90">
+          <p className="text-base leading-relaxed text-charcoal/90">
             {locale === 'hi'
               ? 'आपके आयोजन के बारे में पूछताछ करने के लिए धन्यवाद। हम आपके विशेष दिन को यादगार बनाने के लिए उत्सुक हैं। कृपया जल्द ही हमारी टीम से सुनने की उम्मीद करें।'
               : 'Thank you for inquiring about your event. We\'re excited to make your special day memorable. Please expect to hear from our team soon.'}

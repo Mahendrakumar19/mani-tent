@@ -75,7 +75,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
                   <span className="text-sm font-medium text-gold">
                     {service.title[locale]}
                   </span>
-                  <p className="text-xs text-ivory/80 mt-1">
+                  <p className="text-xs text-white/80 mt-1">
                     {service.shortDescription[locale]}
                   </p>
                 </div>
@@ -96,10 +96,10 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'गैलरी के बारे में' : 'About This Gallery'}
           </h3>
-          <p className="text-base leading-relaxed text-brown/90 mb-4">
+          <p className="text-base leading-relaxed text-charcoal/90 mb-4">
             {t.gallerySection.note}
           </p>
-          <p className="text-base leading-relaxed text-brown/90">
+          <p className="text-base leading-relaxed text-charcoal/90">
             {locale === 'hi'
               ? 'हर सेवा के लिए, हम आपके आयोजन को और अधिक सुंदर और विशेष बनाने के लिए व्यक्तिगत डिजाइन विकल्पप्रदान करते हैं। हमारी टीम के साथ अपने विचार और प्राथमिकताओं पर चर्चा करने के लिए संपर्क करें।'
               : 'For each service, we provide personalized design options to make your event more beautiful and special. Contact us to discuss your ideas and preferences with our team.'}
@@ -135,7 +135,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
                 <h3 className="font-playfair text-lg font-semibold text-charcoal group-hover:text-gold transition-colors mb-2">
                   {service.title[locale]}
                 </h3>
-                <p className="text-sm text-brown/80 leading-relaxed mb-4">
+                <p className="text-sm text-charcoal/80 leading-relaxed mb-4">
                   {service.shortDescription[locale]}
                 </p>
                 <span className="inline-flex items-center text-gold font-medium text-sm group-hover:gap-2 transition-all">
@@ -213,14 +213,14 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
                 {item.title}
               </h3>
-              <p className="text-sm text-brown/80">{item.desc}</p>
+              <p className="text-sm text-charcoal/80">{item.desc}</p>
             </div>
           ))}
         </div>
       </Section>
 
       {/* Update Notice */}
-      <Section className="bg-charcoal text-ivory rounded-lg">
+      <Section className="bg-charcoal text-white rounded-lg">
         <div className="flex gap-4 items-start">
           <span className="text-3xl flex-shrink-0">📸</span>
           <div>

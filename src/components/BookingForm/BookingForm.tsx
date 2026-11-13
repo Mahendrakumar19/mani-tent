@@ -243,7 +243,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           value={formData.customerName}
           onChange={handleChange}
           placeholder={labels.customerNamePlaceholder}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold ${
+          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
             errors.customerName ? 'border-red-500' : 'border-beige'
           }`}
         />
@@ -263,7 +263,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           value={formData.phone}
           onChange={handleChange}
           placeholder={labels.phonePlaceholder}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold ${
+          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
             errors.phone ? 'border-red-500' : 'border-beige'
           }`}
         />
@@ -283,7 +283,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           value={formData.email}
           onChange={handleChange}
           placeholder={labels.emailPlaceholder}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold ${
+          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
             errors.email ? 'border-red-500' : 'border-beige'
           }`}
         />
@@ -302,7 +302,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           name="eventDate"
           value={formData.eventDate}
           onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold ${
+          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal ${
             errors.eventDate ? 'border-red-500' : 'border-beige'
           }`}
         />
@@ -320,7 +320,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           name="eventType"
           value={formData.eventType}
           onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold ${
+          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal ${
             errors.eventType ? 'border-red-500' : 'border-beige'
           }`}
         >
@@ -348,7 +348,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           onChange={handleChange}
           placeholder={labels.guestCountPlaceholder}
           min="1"
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold ${
+          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40 ${
             errors.guestCount ? 'border-red-500' : 'border-beige'
           }`}
         />
@@ -368,7 +368,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           onChange={handleChange}
           placeholder={labels.eventDetailsPlaceholder}
           rows={4}
-          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40"
         />
       </div>
 
@@ -407,7 +407,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           value={formData.budgetRange}
           onChange={handleChange}
           placeholder={labels.budgetRangePlaceholder}
-          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40"
         />
       </div>
 
@@ -422,7 +422,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           onChange={handleChange}
           placeholder={labels.additionalRequestsPlaceholder}
           rows={3}
-          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+          className="w-full px-4 py-2 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal placeholder-charcoal/40"
         />
       </div>
 

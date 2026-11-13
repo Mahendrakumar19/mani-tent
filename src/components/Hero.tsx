@@ -27,16 +27,16 @@ export default function Hero({ locale }: HeroProps) {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 lg:py-40 text-center">
-        <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-gold/80 mb-6 md:mb-8 animate-fade-in">
+        <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-gold mb-6 md:mb-8 animate-fade-in">
           {t.eyebrow}
         </p>
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-8 animate-fade-in-delay">
           {t.heading}
         </h1>
-        <p className="font-playfair text-lg md:text-2xl lg:text-3xl text-gold/80 italic mb-6 md:mb-10 animate-fade-in-delay-2">
+        <p className="font-playfair text-lg md:text-2xl lg:text-3xl text-ivory italic mb-6 md:mb-10 animate-fade-in-delay-2">
           {t.subheading}
         </p>
-        <p className="max-w-3xl mx-auto text-sm md:text-lg lg:text-xl text-ivory/85 leading-relaxed mb-10 md:mb-14 animate-fade-in-delay-3">
+        <p className="max-w-3xl mx-auto text-sm md:text-lg lg:text-xl text-white leading-relaxed mb-10 md:mb-14 animate-fade-in-delay-3">
           {t.description}
         </p>
 

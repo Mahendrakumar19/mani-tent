@@ -72,7 +72,7 @@ export default function BookingPage({
               ? 'बुकिंग के बारे में जानकारी'
               : 'About Booking Process'}
           </h3>
-          <div className="space-y-4 text-brown/90">
+          <div className="space-y-4 text-charcoal/90">
             <p>
               {locale === 'hi'
                 ? 'यह फॉर्म भरकर आप अपनी शादी के लिए हमारी टेंट और सजावट सेवाओं के लिए एक बुकिंग अनुरोध सबमिट कर रहे हैं। हमारी टीम जल्द ही आपसे संपर्क करेगी।'

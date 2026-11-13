@@ -49,7 +49,7 @@ export default function ServiceDetailPage({
   if (!service) {
     return (
       <div className="py-16 text-center">
-        <p className="text-brown/80">
+        <p className="text-charcoal/80">
           {locale === 'hi' ? 'सेवा नहीं मिली' : 'Service not found'}
         </p>
       </div>
@@ -95,7 +95,7 @@ export default function ServiceDetailPage({
       {/* Overview */}
       <Section>
         <div className="max-w-3xl">
-          <p className="text-lg leading-relaxed text-brown/90 mb-8 border-l-4 border-gold pl-6">
+          <p className="text-lg leading-relaxed text-charcoal/90 mb-8 border-l-4 border-gold pl-6">
             {service.shortDescription[locale]}
           </p>
 
@@ -105,7 +105,7 @@ export default function ServiceDetailPage({
             {service.fullDescription[locale].map((paragraph, index) => (
               <p
                 key={index}
-                className="text-base leading-relaxed text-brown/90"
+                className="text-base leading-relaxed text-charcoal/90"
               >
                 {paragraph}
               </p>
@@ -124,7 +124,7 @@ export default function ServiceDetailPage({
           }
         />
         <div className="max-w-3xl">
-          <p className="text-base text-brown/90 mb-6">
+          <p className="text-base text-charcoal/90 mb-6">
             {locale === 'hi'
               ? 'इस सेवा को बुकिंग करते समय निम्नलिखित जानकारी तैयार रखें:'
               : 'When booking this service, have the following information ready:'}
@@ -135,7 +135,7 @@ export default function ServiceDetailPage({
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gold text-charcoal flex items-center justify-center font-bold text-sm mt-0.5">
                   ✓
                 </span>
-                <span className="text-base text-brown/90">{item}</span>
+                <span className="text-base text-charcoal/90">{item}</span>
               </li>
             ))}
           </ul>
@@ -201,7 +201,7 @@ export default function ServiceDetailPage({
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
                 {feature.title}
               </h3>
-              <p className="text-sm text-brown/80">{feature.desc}</p>
+              <p className="text-sm text-charcoal/80">{feature.desc}</p>
             </div>
           ))}
         </div>
@@ -256,7 +256,7 @@ export default function ServiceDetailPage({
               <h4 className="font-playfair text-base font-semibold text-charcoal mb-2">
                 {step.title}
               </h4>
-              <p className="text-xs text-brown/80">{step.desc}</p>
+              <p className="text-xs text-charcoal/80">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -290,7 +290,7 @@ export default function ServiceDetailPage({
                 <h3 className="font-playfair text-lg font-semibold text-charcoal group-hover:text-gold transition-colors">
                   {relatedService.title[locale]}
                 </h3>
-                <p className="text-sm text-brown/80 mt-2">
+                <p className="text-sm text-charcoal/80 mt-2">
                   {relatedService.shortDescription[locale]}
                 </p>
               </Link>
@@ -299,7 +299,7 @@ export default function ServiceDetailPage({
       </Section>
 
       {/* CTA */}
-      <Section className="bg-charcoal text-ivory text-center">
+      <Section className="bg-charcoal text-white text-center">
         <SectionHeader
           title={
             locale === 'hi'

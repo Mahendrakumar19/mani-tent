@@ -145,7 +145,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
                 {feature.title}
               </h3>
-              <p className="text-sm text-brown/80 leading-relaxed">
+              <p className="text-sm text-charcoal/80 leading-relaxed">
                 {feature.desc}
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
           title={locale === 'hi' ? 'अपनी सेवा चुनें' : 'Choose Your Service'}
         />
         <div className="max-w-3xl">
-          <p className="text-base leading-relaxed text-brown/90 mb-6">
+          <p className="text-base leading-relaxed text-charcoal/90 mb-6">
             {locale === 'hi'
               ? 'प्रत्येक सेवा आपके शादी के विभिन्न पहलुओं को कवर करती है। अपनी आवश्यकताओं के आधार पर एक या अधिक सेवाओं को चुनें:'
               : 'Each service covers different aspects of your wedding. Choose one or more services based on your needs:'}
@@ -216,7 +216,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
                 </span>
                 <div>
                   <h4 className="font-semibold text-charcoal">{item.title}</h4>
-                  <p className="text-sm text-brown/80 mt-1">{item.desc}</p>
+                  <p className="text-sm text-charcoal/80 mt-1">{item.desc}</p>
                 </div>
               </li>
             ))}
@@ -230,14 +230,14 @@ export default function ServicesPage({ params }: { params: { locale: string } })
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'मूल्य निर्धारण' : 'Pricing'}
           </h3>
-          <p className="text-base leading-relaxed text-brown/90 mb-6">
+          <p className="text-base leading-relaxed text-charcoal/90 mb-6">
             {locale === 'hi'
               ? 'प्रत्येक आयोजन अद्वितीय है, और हमारी सेवाओं की लागत आपकी आवश्यकताओं, स्थान और आकार पर निर्भर करती है। आयोजन की पूरी जानकारी के साथ हमसे संपर्क करें ताकि हम सटीक उद्धरण प्रदान कर सकें।'
               : 'Every event is unique, and our service costs depend on your requirements, venue and scale. Contact us with complete event details so we can provide accurate quotes.'}
           </p>
           <Link
             href={`/${locale}/contact`}
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-charcoal text-ivory font-semibold text-base hover:bg-charcoal/90 transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-charcoal text-white font-semibold text-base hover:bg-charcoal/90 transition-colors"
           >
             {locale === 'hi' ? 'उद्धरण के लिए पूछें' : 'Request a Quote'}
           </Link>

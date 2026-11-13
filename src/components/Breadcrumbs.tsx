@@ -26,7 +26,7 @@ export default function Breadcrumbs({ locale, crumbs }: BreadcrumbsProps) {
                 </span>
               )}
               {isLast ? (
-                <span className="text-brown/70" aria-current="page">
+                <span className="text-charcoal/70" aria-current="page">
                   {item.label}
                 </span>
               ) : (
