@@ -9,6 +9,7 @@ import ServiceCard from '@/components/ServiceCard';
 import FAQAccordion from '@/components/FAQAccordion';
 import Hero from '@/components/Hero';
 import Button from '@/components/Button';
+import Card from '@/components/Card';
 
 export function generateMetadata({
   params,
@@ -82,22 +83,12 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         <SectionHeader title={t.whyChooseUs.title} align="center" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {t.whyChooseUs.reasons.map((reason, index) => (
-            <div
+            <Card
               key={index}
-              className="bg-white rounded-xl p-7 sm:p-6 md:p-8 border border-beige/50 shadow-md hover:shadow-xl hover:border-gold/30 transition-all duration-300 group hover:translate-y-[-4px]"
-            >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold/20 to-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
-                <span className="text-gold font-playfair text-2xl font-bold">
-                  {index + 1}
-                </span>
-              </div>
-              <h3 className="font-playfair text-lg font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors">
-                {reason.title}
-              </h3>
-              <p className="text-sm text-charcoal/75 leading-relaxed">
-                {reason.desc}
-              </p>
-            </div>
+              icon={index + 1}
+              title={reason.title}
+              description={reason.desc}
+            />
           ))}
         </div>
       </Section>
@@ -190,19 +181,20 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {t.menuSection.categories.map((category, index) => (
-            <div key={index} className="bg-white rounded-xl p-7 md:p-8 border border-beige/50 shadow-md hover:shadow-xl hover:border-gold/30 transition-all duration-300 group hover:translate-y-[-4px]">
-              <h3 className="font-playfair text-xl font-semibold text-charcoal mb-6 group-hover:text-gold transition-colors">
-                {category.name}
-              </h3>
-              <ul className="space-y-3">
-                {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-sm text-charcoal/70 flex items-start gap-3 leading-relaxed">
-                    <span className="text-gold mt-1 flex-shrink-0 font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Card
+              key={index}
+              title={category.name}
+              description={
+                <ul className="space-y-2 text-sm">
+                  {category.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="text-charcoal/70 flex items-start gap-2">
+                      <span className="text-gold flex-shrink-0 font-bold">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              }
+            />
           ))}
         </div>
       </Section>
