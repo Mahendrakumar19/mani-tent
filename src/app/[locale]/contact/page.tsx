@@ -6,6 +6,7 @@ import { generatePageMetadata } from '@/lib/seo';
 import { Section, SectionHeader } from '@/components/Section';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import BookingForm from '@/components/BookingForm/BookingForm';
+import Button from '@/components/Button';
 
 export function generateMetadata({
   params,
@@ -398,12 +399,13 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
           }
           variant="dark"
         />
-        <Link
+        <Button
           href={`/${locale}`}
-          className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gold text-charcoal font-semibold text-base hover:bg-gold/90 transition-colors"
+          variant="primary"
+          size="md"
         >
           {locale === 'hi' ? 'होमपेज पर जाएं' : 'Visit Home'}
-        </Link>
+        </Button>
       </Section>
 
       {/* Booking Form Section */}

@@ -5,6 +5,7 @@ import { CONFIRMED_SERVICES } from '@/content/data';
 import { generatePageMetadata } from '@/lib/seo';
 import { Section, SectionHeader } from '@/components/Section';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import Button from '@/components/Button';
 
 export function generateStaticParams() {
   return CONFIRMED_SERVICES.flatMap((service) => [
@@ -313,12 +314,13 @@ export default function ServiceDetailPage({
           }
           variant="dark"
         />
-        <Link
+        <Button
           href={`/${locale}/contact`}
-          className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gold text-charcoal font-semibold text-base hover:bg-gold/90 transition-colors shadow-lg shadow-gold/20"
+          variant="primary"
+          size="md"
         >
           {locale === 'hi' ? 'संपर्क करें' : 'Get in Touch'}
-        </Link>
+        </Button>
       </Section>
     </div>
   );
