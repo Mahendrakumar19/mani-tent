@@ -2,10 +2,9 @@
 
 import { useState, FormEvent } from 'react';
 import { BookingFormData, BookingResponse } from '@/lib/bookings/types';
-import { validateBookingForm, ValidationError } from '@/lib/bookings/validation';
+import { validateBookingForm } from '@/lib/bookings/validation';
 import { CONFIRMED_SERVICES } from '@/content/data';
 import { generateAdminWhatsAppLink, openWhatsAppChat } from '@/lib/bookings/whatsapp-wa-me';
-import { Booking } from '@/lib/bookings/types';
 
 interface BookingFormProps {
   locale: 'en' | 'hi';

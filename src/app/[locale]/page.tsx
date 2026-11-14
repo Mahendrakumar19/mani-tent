@@ -216,7 +216,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
           variant="dark"
         />
         <Button
-          href={`/${locale}/contact`}
+          href={`/${locale}/booking`}
           variant="primary"
           size="lg"
         >
