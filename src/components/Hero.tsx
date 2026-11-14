@@ -55,16 +55,8 @@ export default function Hero({ locale }: HeroProps) {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 animate-fade-in-delay-4 w-full sm:w-auto">
           <Button
-            href={`/${locale}/contact`}
-            variant="primary"
-            size="md"
-            className="w-full sm:w-auto"
-          >
-            {t.primaryCta}
-          </Button>
-          <Button
             href={`/${locale}/booking`}
-            variant="gold"
+            variant="primary"
             size="md"
             className="w-full sm:w-auto"
           >
