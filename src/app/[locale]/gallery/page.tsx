@@ -47,7 +47,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Gallery Header */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           title={t.gallerySection.title}
           subtitle={t.gallerySection.subtitle}
@@ -62,7 +62,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
             <Link
               key={service.id}
               href={`/${locale}/services/${service.slug[locale]}`}
-              className="group relative h-64 md:h-80 overflow-hidden rounded-lg cursor-pointer"
+              className="group relative h-64 md:h-80 overflow-hidden rounded-2xl cursor-pointer border border-gold/15 shadow-sm hover:shadow-xl transition-shadow duration-500"
             >
               <img
                 src={service.image}
@@ -91,7 +91,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Gallery Note */}
-      <Section className="bg-white/50 border-y border-beige">
+      <Section className="bg-white/50 backdrop-blur-sm border-y border-gold/10">
         <div className="max-w-3xl">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'गैलरी के बारे में' : 'About This Gallery'}
@@ -108,7 +108,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Service Categories */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           title={
             locale === 'hi'
@@ -122,7 +122,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
             <Link
               key={service.id}
               href={`/${locale}/services/${service.slug[locale]}`}
-              className="group bg-white rounded-lg overflow-hidden border border-beige hover:border-gold hover:shadow-lg transition-all duration-300"
+              className="group bg-white/80 backdrop-blur rounded-2xl overflow-hidden border border-gold/15 hover:border-gold/40 hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-40 overflow-hidden">
                 <img
@@ -207,7 +207,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 border border-beige shadow-sm text-center"
+              className="bg-white/80 backdrop-blur rounded-2xl p-6 border border-gold/15 shadow-sm text-center"
             >
               <div className="text-4xl mb-4">{item.icon}</div>
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
@@ -243,7 +243,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Ready to Plan */}
-      <Section className="bg-white text-center">
+      <Section className="bg-white/60 backdrop-blur-sm text-center">
         <SectionHeader
           title={
             locale === 'hi'

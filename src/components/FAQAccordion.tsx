@@ -16,14 +16,14 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
   // First item opens by default for better UX
 
   return (
-    <div className="divide-y divide-beige/40 border border-beige/50 rounded-xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="divide-y divide-beige/40 border border-beige/50 rounded-xl overflow-hidden bg-white/80 backdrop-blur shadow-md hover:shadow-lg transition-shadow duration-300">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (
           <div key={index} className="group">
             <button
               type="button"
-              className="w-full flex items-center justify-between text-left py-5 px-6 bg-white hover:bg-gold/3 transition-colors duration-300 group-hover:bg-gold/2"
+              className="w-full flex items-center justify-between text-left py-5 px-6 bg-white/60 hover:bg-gold/5 transition-colors duration-300 group-hover:bg-gold/5"
               aria-expanded={isOpen}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
@@ -47,7 +47,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               </svg>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-500 ease-in-out ${  isOpen ? 'max-h-96' : 'max-h-0'
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96' : 'max-h-0'
               }`}
             >
               <p className="px-6 pb-5 pt-2 text-base text-charcoal/80 leading-relaxed">

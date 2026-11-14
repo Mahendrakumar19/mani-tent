@@ -12,6 +12,7 @@ interface CardProps {
 /**
  * Reusable Card component for consistent card styling across the site.
  * Used for reasons, features, menu items, and other grouped content.
+ * Features Apple-inspired glassmorphism with subtle frost effects.
  *
  * @param icon - Emoji, number, or ReactNode icon
  * @param title - Card title (supports Playfair font styling)
@@ -27,14 +28,13 @@ export default function Card({
   className = '',
 }: CardProps) {
   const hoverClasses = hoverable
-    ? 'hover:shadow-xl hover:border-gold/30 transition-all duration-300 group hover:translate-y-[-4px]'
+    ? 'group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:border-gold/30 transition-all duration-300'
     : '';
 
   return (
     <div
       className={cn(
-        'bg-white rounded-xl p-7 sm:p-6 md:p-8',
-        'border border-beige/50 shadow-md',
+        'bg-white/80 backdrop-blur rounded-xl p-7 sm:p-6 md:p-8 border border-gold/15 shadow-sm',
         hoverClasses,
         className
       )}
@@ -43,12 +43,12 @@ export default function Card({
         <div
           className={cn(
             'w-12 h-12 rounded-full flex items-center justify-center mb-5',
-            'bg-gradient-to-br from-gold/20 to-gold/10',
+            'bg-gold/10',
             hoverable && 'group-hover:bg-gold/20 transition-colors'
           )}
         >
           {typeof icon === 'string' ? (
-            <span className="text-gold font-playfair text-2xl font-bold">
+            <span className="text-gold/70 font-playfair text-2xl font-bold">
               {icon}
             </span>
           ) : (

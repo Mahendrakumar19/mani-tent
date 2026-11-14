@@ -47,7 +47,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* About Hero */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           title={locale === 'hi' ? 'हमारे बारे में' : 'About MANI TENT HOUSE'}
           align="center"
@@ -99,7 +99,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Why Choose Us - Extended */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           title={locale === 'hi' ? 'क्यों हमें चुनें' : 'Why Choose Us'}
           align="center"
@@ -149,7 +149,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 border border-beige shadow-sm"
+              className="bg-white/80 backdrop-blur rounded-2xl p-6 border border-gold/15 shadow-sm"
             >
               <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-4">
                 <span className="text-gold font-playfair text-xl font-bold">
@@ -219,7 +219,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Contact CTA */}
-      <Section className="bg-charcoal text-white text-center">
+      <Section className="bg-charcoal text-white text-center rounded-xl backdrop-blur-lg">
         <SectionHeader
           title={locale === 'hi' ? 'अपने समारोह की योजना बनाएं' : 'Plan Your Celebration'}
           subtitle={

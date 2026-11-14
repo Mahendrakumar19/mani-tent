@@ -39,7 +39,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <Hero locale={locale} />
 
       {/* Introduction */}
-      <Section className="bg-gradient-to-b from-transparent via-ivory/20 to-transparent">
+      <Section className="py-16 md:py-24">
         <SectionHeader title={t.intro.title} />
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           <div className="space-y-4">
@@ -56,7 +56,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Services */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           eyebrow={locale === 'hi' ? 'सेवाएं' : 'Services'}
           title={t.servicesSection.title}
@@ -141,7 +141,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Process */}
-      <Section className="bg-white">
+      <Section>
         <SectionHeader title={t.processSection.title} align="center" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 max-w-5xl mx-auto">
           {t.processSection.steps.map((step) => (
@@ -165,7 +165,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       {/* Location */}
       <Section>
         <SectionHeader title={t.locationSection.title} align="center" />
-        <div className="max-w-3xl mx-auto bg-gold/3 rounded-xl p-8 md:p-10 border border-gold/20">
+        <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur rounded-xl p-8 md:p-10 border border-gold/15 shadow-sm">
           <p className="text-base md:text-lg leading-relaxed text-charcoal/80 text-center">
             {t.locationSection.text}
           </p>
@@ -173,7 +173,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Menu Card */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           title={t.menuSection.title}
           subtitle={t.menuSection.subtitle}
@@ -200,7 +200,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader title={t.faqSection.title} align="center" />
         <div className="max-w-3xl mx-auto">
           <FAQAccordion items={t.faqSection.faqs} />

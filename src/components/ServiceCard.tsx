@@ -23,15 +23,16 @@ interface ServiceCardProps {
 
 // This component provides a polished service card with improved spacing, hover effects,
 // and better visual hierarchy for the services section
+// Features Apple-inspired glassmorphism with subtle frost effects
 
 export default function ServiceCard({ title, description, image, href, locale }: ServiceCardProps) {
   return (
     <Link
       href={href}
-      className="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gold/20 hover:border-gold/50 hover:translate-y-[-8px] hover:scale-105"
+      className="group block bg-white/80 backdrop-blur rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gold/15 hover:border-gold/30 hover:translate-y-[-4px]"
       style={cardStyles}
     >
-      <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden bg-gradient-to-br from-gold/10 to-white/50">
+      <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden">
         <Image
           src={image}
           alt={title[locale]}

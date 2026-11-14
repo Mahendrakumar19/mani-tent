@@ -48,7 +48,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Contact Header */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           title={locale === 'hi' ? 'संपर्क में रहें' : 'Get In Touch'}
           subtitle={
@@ -100,7 +100,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
           ].map((info, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 border border-gold/20 shadow-sm text-center"
+              className="bg-white/80 backdrop-blur rounded-xl p-6 border border-gold/15 shadow-sm text-center"
             >
               <div className="text-4xl mb-4">{info.icon}</div>
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
@@ -114,7 +114,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Quick Contact Links */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-playfair text-2xl font-bold text-charcoal mb-6">
             {locale === 'hi' ? 'तुरंत संपर्क करें' : 'Quick Contact'}
@@ -145,7 +145,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* Contact Form */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <div className="max-w-2xl mx-auto">
           <SectionHeader
             title={
@@ -229,7 +229,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       </Section>
 
       {/* FAQ CTA */}
-      <Section className="bg-charcoal text-white text-center rounded-lg">
+      <Section className="bg-charcoal text-white text-center rounded-xl backdrop-blur-lg">
         <SectionHeader
           title={
             locale === 'hi'
@@ -254,7 +254,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
 
       {/* Thank You Message */}
       <Section>
-        <div className="max-w-2xl mx-auto text-center bg-white rounded-lg p-8 border border-gold/20 shadow-sm">
+        <div className="max-w-2xl mx-auto text-center bg-white/80 backdrop-blur rounded-xl p-8 border border-gold/15 shadow-sm">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'धन्यवाद!' : 'Thank You!'}
           </h3>

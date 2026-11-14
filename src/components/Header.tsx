@@ -31,7 +31,6 @@ export default function Header({ locale }: HeaderProps) {
     { href: `/${locale}/about`, label: locale === 'hi' ? 'हमारे बारे में' : 'About Us' },
     { href: `/${locale}/services`, label: locale === 'hi' ? 'सेवाएं' : 'Services' },
     { href: `/${locale}/gallery`, label: locale === 'hi' ? 'गैलरी' : 'Gallery' },
-    { href: `/${locale}/blog`, label: locale === 'hi' ? 'ब्लॉग' : 'Blog' },
     { href: `/${locale}/contact`, label: locale === 'hi' ? 'संपर्क करें' : 'Contact' },
   ];
 

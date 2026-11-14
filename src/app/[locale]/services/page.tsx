@@ -50,7 +50,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
       </Section>
 
       {/* Services Header */}
-      <Section className="bg-white">
+      <Section className="bg-white/60 backdrop-blur-sm">
         <SectionHeader
           title={t.servicesSection.title}
           subtitle={t.servicesSection.subtitle}
@@ -141,7 +141,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
                   : 'Our team support throughout the entire event.',
             },
           ].map((feature, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 border border-beige shadow-sm">
+            <div key={index} className="bg-white/80 backdrop-blur rounded-2xl p-6 border border-gold/15 shadow-sm">
               <div className="text-4xl mb-4">{feature.icon}</div>
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
                 {feature.title}
@@ -210,7 +210,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
             ].map((item, index) => (
               <li
                 key={index}
-                className="flex gap-4 items-start bg-white p-4 rounded-lg border border-beige"
+                className="flex gap-4 items-start bg-white/80 backdrop-blur p-4 rounded-xl border border-gold/15"
               >
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gold text-charcoal flex items-center justify-center font-bold text-sm">
                   {index + 1}
@@ -226,7 +226,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
       </Section>
 
       {/* Pricing Note */}
-      <Section className="bg-white/50 border-t border-b border-beige">
+      <Section className="bg-white/50 backdrop-blur-sm border-t border-b border-gold/10">
         <div className="max-w-3xl">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'मूल्य निर्धारण' : 'Pricing'}
@@ -238,7 +238,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
           </p>
           <Link
             href={`/${locale}/contact`}
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-charcoal text-white font-semibold text-base hover:bg-charcoal/90 transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-charcoal text-white font-semibold text-base hover:bg-charcoal/90 hover:shadow-lg hover:shadow-charcoal/20 transition-all"
           >
             {locale === 'hi' ? 'उद्धरण के लिए पूछें' : 'Request a Quote'}
           </Link>

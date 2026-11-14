@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { dictionary } from '@/content/dictionary';
 import Button from './Button';
 
@@ -7,18 +6,17 @@ interface HeroProps {
 }
 
 export default function Hero({ locale }: HeroProps) {
-  // Animation styles added via tailwind in tailwind.config.ts
   const t = dictionary[locale].hero;
 
   return (
     <section className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden mt-16 md:mt-0">
-      {/* Decorative background pattern */}
+      {/* Deep charcoal background with subtle gold texture */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-charcoal/95 via-charcoal/80 to-charcoal/60"
+        className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/90 to-charcoal/70"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-8"
         style={{
           backgroundImage:
             'radial-gradient(circle at 1px 1px, #C6A66B 1px, transparent 0)',
@@ -27,6 +25,20 @@ export default function Hero({ locale }: HeroProps) {
         aria-hidden="true"
       />
 
+      {/* Glassmorphism ambient glow behind hero content */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[120px] mix-blend-overlay"
+          style={{ transform: 'translate(-25%, -25%)' }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[100px] mix-blend-overlay"
+          style={{ transform: 'translate(25%, 25%)' }}
+          aria-hidden="true"
+        />
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 lg:py-40 text-center">
         <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-gold mb-6 md:mb-8 animate-fade-in">
           {t.eyebrow}
@@ -34,10 +46,10 @@ export default function Hero({ locale }: HeroProps) {
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-8 animate-fade-in-delay">
           {t.heading}
         </h1>
-        <p className="font-playfair text-lg md:text-2xl lg:text-3xl text-ivory italic mb-6 md:mb-10 animate-fade-in-delay-2">
+        <p className="font-playfair text-lg md:text-2xl lg:text-3xl text-gold/90 italic mb-6 md:mb-10 animate-fade-in-delay-2">
           {t.subheading}
         </p>
-        <p className="max-w-3xl mx-auto text-sm md:text-lg lg:text-xl text-white leading-relaxed mb-10 md:mb-14 animate-fade-in-delay-3">
+        <p className="max-w-3xl mx-auto text-sm md:text-lg lg:text-xl text-ivory/90 leading-relaxed mb-10 md:mb-14 animate-fade-in-delay-3">
           {t.description}
         </p>
 
