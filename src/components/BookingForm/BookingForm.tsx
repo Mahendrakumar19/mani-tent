@@ -316,15 +316,30 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
         )}
       </div>
 
-
-
-
-
-
-
-
-
-
+      {/* Service Type (Service Selector) */}
+      <div>
+        <label className="block text-sm font-semibold text-charcoal mb-2">
+          {labels.eventTypeLabel} <span className="text-red-500">*</span>
+        </label>
+        <select
+          name="eventType"
+          value={formData.eventType}
+          onChange={handleChange}
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal transition-all duration-300 ${
+            errors.eventType ? 'border-red-500 bg-red-50/30' : 'border-gold/30 hover:border-gold/50 bg-white'
+          }`}
+        >
+          <option value="">{labels.eventTypePlaceholder}</option>
+          {serviceOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        {errors.eventType && (
+          <p className="text-red-500 text-sm mt-1">{errors.eventType}</p>
+        )}
+      </div>
 
       {/* Submit Button */}
       <div className="pt-6">
