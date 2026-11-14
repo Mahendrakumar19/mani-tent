@@ -65,7 +65,7 @@ export default function BookingPage({
       </Section>
 
       {/* Info Section */}
-      <Section className="bg-white border-t border-beige/30">
+      <Section className="bg-white border-t border-ivory/30">
         <div className="max-w-3xl mx-auto">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi'

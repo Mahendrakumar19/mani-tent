@@ -100,7 +100,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
           ].map((info, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 border border-beige shadow-sm text-center"
+              className="bg-white rounded-lg p-6 border border-gold/20 shadow-sm text-center"
             >
               <div className="text-4xl mb-4">{info.icon}</div>
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
@@ -156,170 +156,14 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
             align="center"
           />
 
-          <form className="space-y-6">
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
-                {t.form.nameLabel} *
-              </label>
-              <input
-                type="text"
-                placeholder={
-                  locale === 'hi'
-                    ? 'आपका नाम'
-                    : 'Your full name'
-                }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
-                required
-              />
-            </div>
+          <BookingForm locale={locale} t={t} />
 
-            {/* Mobile */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
-                {t.form.mobileLabel} *
-              </label>
-              <input
-                type="tel"
-                placeholder={
-                  locale === 'hi'
-                    ? 'आपका फोन नंबर'
-                    : 'Your phone number'
-                }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
-                required
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
-                {t.form.emailLabel}
-              </label>
-              <input
-                type="email"
-                placeholder={
-                  locale === 'hi'
-                    ? 'आपकी ईमेल'
-                    : 'Your email address'
-                }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
-              />
-            </div>
-
-            {/* Event Date */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
-                {t.form.dateLabel}
-              </label>
-              <input
-                type="date"
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
-              />
-            </div>
-
-            {/* Location */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
-                {t.form.locationLabel}
-              </label>
-              <input
-                type="text"
-                placeholder={
-                  locale === 'hi'
-                    ? 'आयोजन स्थान'
-                    : 'Event location/venue'
-                }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
-              />
-            </div>
-
-            {/* Services */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-3">
-                {t.form.servicesLabel}
-              </label>
-              <div className="space-y-2">
-                {[
-                  {
-                    value: 'tent-setup',
-                    label:
-                      locale === 'hi'
-                        ? 'वेडिंग टेंट सेटअप'
-                        : 'Wedding Tent Setup',
-                  },
-                ].map((service) => (
-                  <label key={service.value} className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      value={service.value}
-                      className="w-4 h-4 rounded border-beige text-gold focus:ring-2 focus:ring-gold"
-                    />
-                    <span className="text-sm text-charcoal">{service.label}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Guest Count */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
-                {t.form.guestLabel}
-              </label>
-              <input
-                type="number"
-                placeholder={
-                  locale === 'hi'
-                    ? 'अनुमानित मेहमान संख्या'
-                    : 'Estimated guest count'
-                }
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
-              />
-            </div>
-
-            {/* Message */}
-            <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
-                {t.form.messageLabel}
-              </label>
-              <textarea
-                placeholder={
-                  locale === 'hi'
-                    ? 'अपनी आवश्यकताओं और विचारों को साझा करें...'
-                    : 'Share your requirements and ideas...'
-                }
-                rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-beige bg-white text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all resize-none"
-              />
-            </div>
-
-            {/* Consent */}
-            <label className="flex items-start gap-3 cursor-pointer">
-              <input
-                type="checkbox"
-                className="w-4 h-4 rounded border-beige text-gold focus:ring-2 focus:ring-gold mt-1 flex-shrink-0"
-                required
-              />
-              <span className="text-xs text-charcoal/80">
-                {t.form.consentText}
-              </span>
-            </label>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full px-6 py-3 rounded-lg bg-charcoal text-white font-semibold text-base hover:bg-charcoal/90 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
-            >
-              {t.form.submitBtn}
-            </button>
-
-            {/* Note */}
-            <p className="text-xs text-charcoal/60 text-center">
-              {locale === 'hi'
-                ? '* आवश्यक फील्ड। हम जल्द ही आपसे संपर्क करेंगे।'
-                : '* Required fields. We\'ll get back to you soon.'}
-            </p>
-          </form>
+          {/* Note */}
+          <p className="text-sm text-charcoal/60 text-center mt-4">
+            {locale === 'hi'
+              ? '* आवश्यक फील्ड। हम जल्द ही आपसे संपर्क करेंगे।'
+              : '* Required fields. We will get back to you soon.'}
+          </p>
         </div>
       </Section>
 
@@ -370,7 +214,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
           ].map((item) => (
             <div
               key={item.num}
-              className="text-center bg-white rounded-lg p-6 border border-beige"
+              className="text-center bg-white rounded-lg p-6 border border-gold/20 shadow-sm"
             >
               <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gold text-charcoal font-playfair font-bold flex items-center justify-center mx-auto mb-4">
                 {item.num}
@@ -389,7 +233,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         <SectionHeader
           title={
             locale === 'hi'
-              ? 'सामण्य प्रश्न?'
+              ? 'सामान्य प्रश्न?'
               : 'Have Questions?'
           }
           subtitle={
@@ -408,29 +252,16 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         </Button>
       </Section>
 
-      {/* Booking Form Section */}
-      <Section className="bg-white">
-        <SectionHeader
-          title={t.booking.title}
-          subtitle={t.booking.subtitle}
-          align="center"
-        />
-      </Section>
-
-      <Section className="max-w-2xl mx-auto">
-        <BookingForm locale={locale} t={t} />
-      </Section>
-
       {/* Thank You Message */}
       <Section>
-        <div className="max-w-2xl mx-auto text-center bg-white rounded-lg p-8 border border-beige">
+        <div className="max-w-2xl mx-auto text-center bg-white rounded-lg p-8 border border-gold/20 shadow-sm">
           <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
             {locale === 'hi' ? 'धन्यवाद!' : 'Thank You!'}
           </h3>
           <p className="text-base leading-relaxed text-charcoal/90">
             {locale === 'hi'
               ? 'आपके आयोजन के बारे में पूछताछ करने के लिए धन्यवाद। हम आपके विशेष दिन को यादगार बनाने के लिए उत्सुक हैं। कृपया जल्द ही हमारी टीम से सुनने की उम्मीद करें।'
-              : 'Thank you for inquiring about your event. We\'re excited to make your special day memorable. Please expect to hear from our team soon.'}
+              : 'Thank you for inquiring about your event. We are excited to make your special day memorable. Please expect to hear from our team soon.'}
           </p>
         </div>
       </Section>

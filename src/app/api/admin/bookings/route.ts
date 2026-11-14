@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { readBookings, getBookingStats } from '@/lib/bookings/utils';
 
 async function checkAdminAuth(request: NextRequest): Promise<boolean> {
-  const authCookie = request.cookies.get('admin-token');
-  return !!authCookie;
+  const authCookie = request.cookies.get('admin-auth');
+  return authCookie?.value === 'true';
 }
 
 export async function GET(request: NextRequest): Promise<NextResponse> {

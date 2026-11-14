@@ -7,8 +7,8 @@ import {
 } from '@/lib/bookings/utils';
 
 async function checkAdminAuth(request: NextRequest): Promise<boolean> {
-  const authCookie = request.cookies.get('admin-token');
-  return !!authCookie;
+  const authCookie = request.cookies.get('admin-auth');
+  return authCookie?.value === 'true';
 }
 
 export async function GET(
