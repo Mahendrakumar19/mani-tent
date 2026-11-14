@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-type ButtonVariant = 'primary' | 'secondary' | 'dark';
+type ButtonVariant = 'primary' | 'secondary' | 'dark' | 'gold';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
@@ -37,6 +37,7 @@ export default function Button({
 
   const variants = {
     primary: 'bg-gold text-charcoal hover:bg-gold/90 hover:shadow-2xl hover:shadow-gold/30 hover:scale-[1.02] shadow-lg shadow-gold/20 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]',
+    gold: 'bg-transparent border-2 border-gold text-gold hover:bg-gold/10 hover:shadow-lg hover:shadow-gold/20 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]',
     secondary: 'border-2 border-white/70 text-white hover:bg-white/15 hover:border-white hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]',
     dark: 'bg-charcoal text-white hover:bg-charcoal/90 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]',
   };

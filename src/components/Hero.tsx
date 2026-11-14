@@ -63,6 +63,14 @@ export default function Hero({ locale }: HeroProps) {
             {t.primaryCta}
           </Button>
           <Button
+            href={`/${locale}/booking`}
+            variant="gold"
+            size="md"
+            className="w-full sm:w-auto"
+          >
+            {t.bookNow}
+          </Button>
+          <Button
             href={`/${locale}/services`}
             variant="secondary"
             size="md"

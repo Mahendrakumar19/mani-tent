@@ -3,7 +3,7 @@ import { Booking } from './types';
 /**
  * Generate WhatsApp wa.me link for direct messaging
  * No backend required - uses free WhatsApp web links
- * 
+ *
  * wa.me format: https://wa.me/{phoneNumber}?text={message}
  */
 
@@ -13,52 +13,79 @@ export interface WhatsAppLink {
   phoneNumber: string;
 }
 
-/**
- * Format booking details into a WhatsApp message
- * Keeps it concise but informative for wa.me links
- */
+const BUSINESS_ADDRESS =
+  'Hemu Nagar, Bandhuapara Talab, Torwa Road, Torwa, Bilaspur, Chhattisgarh - 495004';
+
 function formatBookingForWhatsApp(booking: Booking): string {
+  const isHindi = booking.locale === 'hi';
   const eventTypeLabel = booking.eventType
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (l) => l.toUpperCase());
-  
-  const eventDate = new Date(booking.eventDate).toLocaleDateString('en-IN', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+
+  const eventDate = new Date(booking.eventDate).toLocaleDateString(
+    isHindi ? 'hi-IN' : 'en-IN',
+    {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }
+  );
+
+  if (isHindi) {
+    let message = `📋 नई बुकिंग अनुरोध!\n\n`;
+    message += `👤 नाम: ${booking.customerName}\n`;
+    message += `📞 फोन: ${booking.phone}\n`;
+    if (booking.email) {
+      message += `📧 ईमेल: ${booking.email}\n`;
+    }
+    message += `\n📅 आयोजन तारीख: ${eventDate}\n`;
+    message += `🎯 सेवा: ${eventTypeLabel}\n`;
+    if (booking.guestCount) {
+      message += `👥 अतिथि संख्या: ${booking.guestCount}\n`;
+    }
+    if (booking.budgetRange) {
+      message += `💰 बजट: ₹${booking.budgetRange}\n`;
+    }
+    message += `📍 पता: ${BUSINESS_ADDRESS}\n`;
+    if (booking.eventDetails) {
+      message += `\n📝 विवरण:\n${booking.eventDetails}\n`;
+    }
+    if (booking.additionalRequests) {
+      message += `\n⭐ विशेष अनुरोध:\n${booking.additionalRequests}\n`;
+    }
+    message += `\n---\nबुकिंग ID: ${booking.id}`;
+    return message;
+  }
 
   let message = `📋 NEW BOOKING REQUEST\n\n`;
   message += `👤 Name: ${booking.customerName}\n`;
   message += `📞 Phone: ${booking.phone}\n`;
-  
+
   if (booking.email) {
     message += `📧 Email: ${booking.email}\n`;
   }
-  
+
   message += `\n📅 Event Date: ${eventDate}\n`;
-  message += `🎯 Event Type: ${eventTypeLabel}\n`;
-  
+  message += `🎯 Service: ${eventTypeLabel}\n`;
+
   if (booking.guestCount) {
     message += `👥 Guest Count: ${booking.guestCount}\n`;
   }
-  
+
   if (booking.budgetRange) {
     message += `💰 Budget: ₹${booking.budgetRange}\n`;
   }
-  
-  if (booking.honeycombGlamping) {
-    message += `🎪 Glamping: Yes\n`;
-  }
-  
+
+  message += `📍 Address: ${BUSINESS_ADDRESS}\n`;
+
   if (booking.eventDetails) {
     message += `\n📝 Details:\n${booking.eventDetails}\n`;
   }
-  
+
   if (booking.additionalRequests) {
     message += `\n⭐ Special Requests:\n${booking.additionalRequests}\n`;
   }
-  
+
   message += `\n---\nBooking ID: ${booking.id}`;
 
   return message;

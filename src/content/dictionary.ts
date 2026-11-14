@@ -22,6 +22,7 @@ export const dictionary = {
       description: "Every wedding deserves a beautiful setting. From elegant tent arrangements to thoughtfully designed mandaps, stages and reception decorations, MANI TENT HOUSE helps make your special occasions memorable. Serving Bilaspur and nearby areas in Chhattisgarh.",
       primaryCta: "Plan Your Wedding",
       secondaryCta: "Explore Our Services",
+      bookNow: "Book Now",
     },
     intro: {
       title: "A Beautiful Setting for Your Special Moments",
@@ -269,6 +270,7 @@ export const dictionary = {
       description: "हर शादी और खास मौके को एक खूबसूरत माहौल की जरूरत होती है। शानदार टेंट व्यवस्था से लेकर आकर्षक मंडप, स्टेज और रिसेप्शन डेकोरेशन तक, MANI TENT HOUSE आपके खास पलों को यादगार बनाने का प्रयास करता है। बिलासपुर और आसपास के क्षेत्रों में सेवाओं के लिए संपर्क करें।",
       primaryCta: "अपनी शादी की योजना बताएं",
       secondaryCta: "हमारी सेवाएं देखें",
+      bookNow: "बुक करें",
     },
     intro: {
       title: "आपके खास पलों के लिए खूबसूरत सजावट",

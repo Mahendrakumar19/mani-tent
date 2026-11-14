@@ -3,6 +3,7 @@ import { BookingFormData, BookingResponse } from '@/lib/bookings/types';
 import { validateBookingForm } from '@/lib/bookings/validation';
 import { saveBooking, createBookingFromFormData, readBookings } from '@/lib/bookings/utils';
 import { notifyAdminViaWhatsApp } from '@/lib/bookings/whatsapp-notify';
+import { notifyAdminViaEmail } from '@/lib/bookings/email';
 
 export async function POST(request: NextRequest): Promise<NextResponse<BookingResponse>> {
   try {
@@ -35,6 +36,11 @@ export async function POST(request: NextRequest): Promise<NextResponse<BookingRe
     // This runs in the background and doesn't affect the response
     notifyAdminViaWhatsApp(booking).catch((error) => {
       console.error('Failed to send WhatsApp notification:', error);
+    });
+
+    // Send email notification (async, non-blocking)
+    notifyAdminViaEmail(booking).catch((error) => {
+      console.error('Failed to send email notification:', error);
     });
 
     return NextResponse.json(

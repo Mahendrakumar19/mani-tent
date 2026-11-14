@@ -1,7 +1,7 @@
 {
-  "enabled": false,
+  "enabled": true,
   "provider": "webhook",
-  "adminPhoneNumber": "",
+  "adminPhoneNumber": "919098888130",
   "comments": {
     "enabled": "Set to true to enable WhatsApp notifications for bookings",
     "provider": "Options: 'twilio', 'webhook', 'make', 'none'",

@@ -1,0 +1,56 @@
+{
+  "enabled": true,
+  "provider": "smtp",
+  "to": "contact@manitenthouse.in",
+  "from": "noreply@manitenthouse.in",
+  "comments": {
+    "enabled": "Set to true to enable email notifications for bookings",
+    "provider": "Options: 'smtp', 'none'",
+    "to": "Email address that receives booking notifications",
+    "from": "Sender email address shown in the From field",
+    "smtp": "SMTP server credentials (get from your email provider)"
+  },
+  "smtp": {
+    "host": "",
+    "port": 587,
+    "secure": false,
+    "user": "",
+    "password": "",
+    "comments": {
+      "host": "SMTP server hostname (e.g., smtp.gmail.com)",
+      "port": "SMTP port (587 for TLS, 465 for SSL)",
+      "secure": "true for SSL (port 465), false for TLS (port 587)",
+      "user": "SMTP username (usually your email address)",
+      "password": "SMTP password or app-specific password",
+      "gmail_note": "For Gmail, use an App Password (not your regular password). See setup_guide below."
+    }
+  },
+  "setup_guide": {
+    "option_1_gmail": {
+      "steps": [
+        "1. Go to https://myaccount.google.com/security",
+        "2. Enable 2-Step Verification",
+        "3. Go to https://myaccount.google.com/apppasswords",
+        "4. Generate an App Password for 'Mail'",
+        "5. Copy the 16-character app password",
+        "6. Set smtp.host='smtp.gmail.com', smtp.port=587, smtp.secure=false",
+        "7. Set smtp.user='your-email@gmail.com', smtp.password='app-password'"
+      ]
+    },
+    "option_2_outlook": {
+      "steps": [
+        "1. Go to https://outlook.live.com",
+        "2. Create an account or use existing one",
+        "3. Set smtp.host='smtp-mail.outlook.com', smtp.port=587, smtp.secure=false",
+        "4. Set smtp.user='your-email@outlook.com', smtp.password='your-password'"
+      ]
+    },
+    "option_3_custom": {
+      "steps": [
+        "1. Ask your hosting provider for SMTP details",
+        "2. Or use any SMTP service (SendGrid, Mailgun, etc.)",
+        "3. Fill in host, port, secure, user, password"
+      ]
+    }
+  }
+}
