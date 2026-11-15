@@ -12,7 +12,11 @@ export function readBookings(): Booking[] {
   try {
     const content = readFileSync(BOOKINGS_FILE, 'utf-8');
     const data = JSON.parse(content);
-    return data.bookings || [];
+    // Backward compatibility: ensure eventTypes array exists even for old records with eventType
+    return (data.bookings || []).map((b: any) => ({
+      ...b,
+      eventTypes: b.eventTypes || (b.eventType ? [b.eventType] : []),
+    }));
   } catch (error) {
     return [];
   }
@@ -95,7 +99,7 @@ export function createBookingFromFormData(
     phone: formData.phone.replace(/\s/g, ''),
     email: formData.email?.trim(),
     eventDate: formData.eventDate,
-    eventType: formData.eventType,
+    eventTypes: formData.eventTypes || [],
     guestCount: formData.guestCount ? parseInt(formData.guestCount, 10) : undefined,
     eventDetails: formData.eventDetails?.trim(),
     preferredContact: formData.preferredContact,

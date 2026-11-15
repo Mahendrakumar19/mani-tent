@@ -2,6 +2,7 @@ import { Booking } from './types';
 import nodemailer from 'nodemailer';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { CONFIRMED_SERVICES } from '@/content/data';
 
 export interface EmailConfig {
   enabled: boolean;
@@ -37,9 +38,18 @@ export const DEFAULT_EMAIL_CONFIG = loadEmailConfig();
 
 function formatBookingEmail(booking: Booking): { subject: string; html: string; text: string } {
   const isHindi = booking.locale === 'hi';
-  const eventTypeLabel = booking.eventType
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (l) => l.toUpperCase());
+
+  const typesList = booking.eventTypes && booking.eventTypes.length > 0
+    ? booking.eventTypes
+    : (booking as any).eventType ? [(booking as any).eventType] : [];
+
+  const serviceLabels = typesList.map((typeId) => {
+    const found = CONFIRMED_SERVICES.find(s => s.id === typeId);
+    if (found) {
+      return found.title[booking.locale];
+    }
+    return typeId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
+  }).join(', ');
 
   const eventDate = new Date(booking.eventDate).toLocaleDateString(
     isHindi ? 'hi-IN' : 'en-IN',
@@ -57,7 +67,7 @@ function formatBookingEmail(booking: Booking): { subject: string; html: string; 
 ${booking.email ? `ईमेल: ${booking.email}` : ''}
 
 आयोजन तारीख: ${eventDate}
-सेवा: ${eventTypeLabel}
+सेवाएं: ${serviceLabels}
 ${booking.guestCount ? `अतिथि संख्या: ${booking.guestCount}` : ''}
 ${booking.budgetRange ? `बजट: ₹${booking.budgetRange}` : ''}
 पता: ${address}
@@ -75,7 +85,7 @@ Phone: ${booking.phone}
 ${booking.email ? `Email: ${booking.email}` : ''}
 
 Event Date: ${eventDate}
-Service: ${eventTypeLabel}
+Services: ${serviceLabels}
 ${booking.guestCount ? `Guest Count: ${booking.guestCount}` : ''}
 ${booking.budgetRange ? `Budget: ₹${booking.budgetRange}` : ''}
 Address: ${address}

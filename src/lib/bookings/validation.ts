@@ -56,11 +56,11 @@ export function validateBookingForm(data: BookingFormData): ValidationError[] {
     }
   }
 
-  // Validate event type
-  if (!data.eventType || data.eventType.trim().length === 0) {
+  // Validate event types (at least one required)
+  if (!data.eventTypes || !Array.isArray(data.eventTypes) || data.eventTypes.length === 0) {
     errors.push({
-      field: 'eventType',
-      message: 'Event type is required',
+      field: 'eventTypes',
+      message: 'Please select at least one service',
     });
   }
 

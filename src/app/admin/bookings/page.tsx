@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Booking } from '@/lib/bookings/types';
+import { CONFIRMED_SERVICES } from '@/content/data';
 
 interface BookingStats {
   total: number;
@@ -94,6 +95,17 @@ export default function AdminBookingsPage() {
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error updating booking');
     }
+  };
+
+  const getServiceLabels = (booking: Booking) => {
+    const typesList = booking.eventTypes && booking.eventTypes.length > 0
+      ? booking.eventTypes
+      : (booking as any).eventType ? [(booking as any).eventType] : [];
+
+    return typesList.map((typeId) => {
+      const found = CONFIRMED_SERVICES.find(s => s.id === typeId);
+      return found ? found.title[booking.locale] : typeId;
+    }).join(', ');
   };
 
   const filteredBookings = bookings.filter((booking) => {
@@ -208,7 +220,7 @@ export default function AdminBookingsPage() {
                     Event Date
                   </th>
                   <th className="px-6 py-3 text-left text-sm font-semibold">
-                    Guest Count
+                    Services
                   </th>
                   <th className="px-6 py-3 text-left text-sm font-semibold">
                     Status
@@ -241,8 +253,8 @@ export default function AdminBookingsPage() {
                     <td className="px-6 py-4 text-charcoal">
                       {new Date(booking.eventDate).toLocaleDateString()}
                     </td>
-                    <td className="px-6 py-4 text-charcoal">
-                      {booking.guestCount || '-'}
+                    <td className="px-6 py-4 text-charcoal text-sm max-w-[200px] truncate">
+                      {getServiceLabels(booking)}
                     </td>
                     <td className="px-6 py-4">
                       <span
@@ -345,9 +357,9 @@ export default function AdminBookingsPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-charcoal/60">
-                    Event Type
+                    Services
                   </label>
-                  <p className="text-charcoal">{selectedBooking.eventType}</p>
+                  <p className="text-charcoal">{getServiceLabels(selectedBooking)}</p>
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-charcoal/60">

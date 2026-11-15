@@ -1,6 +1,7 @@
 import { Booking } from './types';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { CONFIRMED_SERVICES } from '@/content/data';
 
 /**
  * WhatsApp Integration for Booking Notifications
@@ -60,7 +61,18 @@ export const DEFAULT_WHATSAPP_CONFIG = loadWhatsAppConfig();
  * Format a booking into a WhatsApp message
  */
 export function formatBookingMessage(booking: Booking, includeAdminUrl = true): string {
-  const eventTypeLabel = booking.eventType.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+  const typesList = booking.eventTypes && booking.eventTypes.length > 0
+    ? booking.eventTypes
+    : (booking as any).eventType ? [(booking as any).eventType] : [];
+
+  const serviceLabels = typesList.map((typeId) => {
+    const found = CONFIRMED_SERVICES.find(s => s.id === typeId);
+    if (found) {
+      return found.title[booking.locale];
+    }
+    return typeId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
+  }).join(', ');
+
   const budgetText = booking.budgetRange ? `💰 Budget: ₹${booking.budgetRange}` : '';
   const guestCountText = booking.guestCount ? `👥 Guest Count: ${booking.guestCount}` : '';
   const additionalText = booking.additionalRequests ? `\n📝 Special Requests: ${booking.additionalRequests}` : '';
@@ -77,7 +89,7 @@ ${booking.email ? `Email: ${booking.email}` : ''}
     month: 'long',
     day: 'numeric',
   })}
-${guestCountText ? guestCountText + '\n' : ''}🎯 Event Type: ${eventTypeLabel}
+${guestCountText ? guestCountText + '\n' : ''}🎯 Services: ${serviceLabels}
 ${budgetText}${additionalText}
 ${booking.eventDetails ? `\nDescription: ${booking.eventDetails}` : ''}
 ${adminUrl}`;
@@ -148,7 +160,7 @@ async function sendViaWebhook(config: WhatsAppConfig, booking: Booking, message:
       },
       event: {
         date: booking.eventDate,
-        type: booking.eventType,
+        types: booking.eventTypes,
         guestCount: booking.guestCount,
         budget: booking.budgetRange,
         details: booking.eventDetails,

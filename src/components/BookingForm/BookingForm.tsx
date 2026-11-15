@@ -18,7 +18,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
     phone: '',
     email: '',
     eventDate: '',
-    eventType: '',
+    eventTypes: [],
     guestCount: '',
     eventDetails: '',
     preferredContact: 'phone',
@@ -58,11 +58,29 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
       }));
     }
 
-    // Clear error for this field when user starts typing
+    // Clear error for this field when user starts typing/changing
     if (errors[name]) {
       setErrors((prev) => {
         const newErrors = { ...prev };
         delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  const handleServiceToggle = (serviceId: string) => {
+    setFormData((prev) => {
+      const current = prev.eventTypes || [];
+      const updated = current.includes(serviceId)
+        ? current.filter((id) => id !== serviceId)
+        : [...current, serviceId];
+      return { ...prev, eventTypes: updated };
+    });
+
+    if (errors.eventTypes) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors.eventTypes;
         return newErrors;
       });
     }
@@ -106,7 +124,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           phone: formData.phone,
           email: formData.email,
           eventDate: formData.eventDate,
-          eventType: formData.eventType,
+          eventTypes: formData.eventTypes,
           guestCount: formData.guestCount ? parseInt(formData.guestCount, 10) : undefined,
           eventDetails: formData.eventDetails,
           budgetRange: formData.budgetRange,
@@ -114,6 +132,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           honeycombGlamping: formData.honeycombGlamping,
           preferredContact: formData.preferredContact,
           id: data.bookingId,
+          locale,
         });
 
         setSubmitMessage({
@@ -128,7 +147,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           phone: '',
           email: '',
           eventDate: '',
-          eventType: '',
+          eventTypes: [],
           guestCount: '',
           eventDetails: '',
           preferredContact: 'phone',
@@ -193,7 +212,7 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           >
             {submitMessage.message}
           </p>
-          
+
           {/* WhatsApp Notification Button */}
           {submitMessage.type === 'success' && successBooking && (
             <div className="mt-6 space-y-3">
@@ -271,8 +290,6 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
         )}
       </div>
 
-
-
       {/* Event Date */}
       <div>
         <label className="block text-sm font-semibold text-charcoal mb-2">
@@ -291,8 +308,6 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
           <p className="text-red-500 text-sm mt-1">{errors.eventDate}</p>
         )}
       </div>
-
-
 
       {/* Guest Count */}
       <div>
@@ -315,28 +330,41 @@ export default function BookingForm({ locale, t, onSuccess }: BookingFormProps) 
         )}
       </div>
 
-      {/* Service Type (Service Selector) */}
+      {/* Services Multi-Select Checklist */}
       <div>
         <label className="block text-sm font-semibold text-charcoal mb-2">
-          {labels.eventTypeLabel} <span className="text-red-500">*</span>
+          {labels.eventTypeLabel} (Multiple Selection) <span className="text-red-500">*</span>
         </label>
-        <select
-          name="eventType"
-          value={formData.eventType}
-          onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-charcoal transition-all duration-300 ${
-            errors.eventType ? 'border-red-500 bg-red-50/30' : 'border-gold/30 hover:border-gold/50 bg-white'
-          }`}
-        >
-          <option value="">{labels.eventTypePlaceholder}</option>
-          {serviceOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        {errors.eventType && (
-          <p className="text-red-500 text-sm mt-1">{errors.eventType}</p>
+        <p className="text-xs text-charcoal/60 mb-3">
+          {locale === 'hi' ? 'कृपया अपनी आवश्यकतानुसार एक या अधिक सेवाएं चुनें:' : 'Please select one or more services needed for your event:'}
+        </p>
+        <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 border rounded-lg bg-white transition-all duration-300 ${
+          errors.eventTypes ? 'border-red-500 bg-red-50/30' : 'border-gold/30 hover:border-gold/50'
+        }`}>
+          {serviceOptions.map((option) => {
+            const isChecked = formData.eventTypes.includes(option.value);
+            return (
+              <label
+                key={option.value}
+                className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
+                  isChecked
+                    ? 'border-gold bg-gold/10 font-medium text-charcoal'
+                    : 'border-beige hover:border-gold/40 text-charcoal/80'
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  checked={isChecked}
+                  onChange={() => handleServiceToggle(option.value)}
+                  className="w-4 h-4 text-gold border-gold/40 rounded focus:ring-gold accent-gold"
+                />
+                <span className="text-sm">{option.label}</span>
+              </label>
+            );
+          })}
+        </div>
+        {errors.eventTypes && (
+          <p className="text-red-500 text-sm mt-1">{errors.eventTypes}</p>
         )}
       </div>
 

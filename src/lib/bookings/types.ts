@@ -6,7 +6,7 @@ export interface Booking {
   phone: string;
   email?: string;
   eventDate: string;
-  eventType: string;
+  eventTypes: string[];
   guestCount?: number;
   eventDetails?: string;
   preferredContact: 'phone' | 'email' | 'whatsapp';
@@ -22,7 +22,7 @@ export interface BookingFormData {
   phone: string;
   email?: string;
   eventDate: string;
-  eventType: string;
+  eventTypes: string[];
   guestCount?: string;
   eventDetails?: string;
   preferredContact: 'phone' | 'email' | 'whatsapp';

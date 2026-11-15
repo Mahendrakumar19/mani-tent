@@ -1,4 +1,5 @@
 import { Booking } from './types';
+import { CONFIRMED_SERVICES } from '@/content/data';
 
 /**
  * Generate WhatsApp wa.me link for direct messaging
@@ -18,9 +19,19 @@ const BUSINESS_ADDRESS =
 
 function formatBookingForWhatsApp(booking: Booking): string {
   const isHindi = booking.locale === 'hi';
-  const eventTypeLabel = booking.eventType
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (l) => l.toUpperCase());
+
+  // Resolve event types to their titles
+  const typesList = booking.eventTypes && booking.eventTypes.length > 0
+    ? booking.eventTypes
+    : (booking as any).eventType ? [(booking as any).eventType] : [];
+
+  const serviceLabels = typesList.map((typeId) => {
+    const found = CONFIRMED_SERVICES.find(s => s.id === typeId);
+    if (found) {
+      return found.title[booking.locale];
+    }
+    return typeId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
+  }).join(', ');
 
   const eventDate = new Date(booking.eventDate).toLocaleDateString(
     isHindi ? 'hi-IN' : 'en-IN',
@@ -39,7 +50,7 @@ function formatBookingForWhatsApp(booking: Booking): string {
       message += `📧 ईमेल: ${booking.email}\n`;
     }
     message += `\n📅 आयोजन तारीख: ${eventDate}\n`;
-    message += `🎯 सेवा: ${eventTypeLabel}\n`;
+    message += `🎯 सेवाएं: ${serviceLabels}\n`;
     if (booking.guestCount) {
       message += `👥 अतिथि संख्या: ${booking.guestCount}\n`;
     }
@@ -66,7 +77,7 @@ function formatBookingForWhatsApp(booking: Booking): string {
   }
 
   message += `\n📅 Event Date: ${eventDate}\n`;
-  message += `🎯 Service: ${eventTypeLabel}\n`;
+  message += `🎯 Services: ${serviceLabels}\n`;
 
   if (booking.guestCount) {
     message += `👥 Guest Count: ${booking.guestCount}\n`;
@@ -100,13 +111,13 @@ export function generateAdminWhatsAppLink(
   adminPhone: string
 ): WhatsAppLink {
   const message = formatBookingForWhatsApp(booking);
-  
+
   // Clean phone number (remove +, -, spaces)
   const cleanPhone = adminPhone.replace(/[^\d]/g, '');
-  
+
   // URL encode the message
   const encodedMessage = encodeURIComponent(message);
-  
+
   // Generate wa.me link
   const url = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
 
@@ -128,14 +139,14 @@ export function generateCustomerConfirmationLink(
 ): WhatsAppLink {
   // Clean phone number
   const cleanPhone = customerPhone.replace(/[^\d]/g, '');
-  
+
   // Add country code if missing (assume India +91)
-  const phoneWithCountry = cleanPhone.startsWith('91') 
-    ? cleanPhone 
+  const phoneWithCountry = cleanPhone.startsWith('91')
+    ? cleanPhone
     : `91${cleanPhone}`;
 
   const message = `Hi ${customerName}! ✅\n\nYour booking has been submitted successfully!\n\nBooking ID: ${bookingId}\n\nOur team will contact you shortly to confirm details.\n\nThank you for choosing MANI TENT HOUSE! 🎉`;
-  
+
   const encodedMessage = encodeURIComponent(message);
   const url = `https://wa.me/${phoneWithCountry}?text=${encodedMessage}`;
 
@@ -152,15 +163,15 @@ export function generateCustomerConfirmationLink(
  */
 export function isWhatsAppAvailable(): boolean {
   if (typeof window === 'undefined') return true; // Server-side, assume available
-  
+
   const userAgent = navigator.userAgent.toLowerCase();
-  
+
   // Check if on mobile
   const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
-  
+
   // On mobile, WhatsApp is usually available
   if (isMobile) return true;
-  
+
   // On desktop, WhatsApp Web is available
   return true; // wa.me works on all platforms
 }
