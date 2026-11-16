@@ -246,6 +246,74 @@ export const dictionary = {
       privacy: "Privacy Policy",
       terms: "Terms & Conditions",
     },
+    privacyPolicy: {
+      title: "Privacy Policy",
+      subtitle: "How MANI TENT HOUSE collects, uses and protects your information.",
+      sections: [
+        {
+          heading: "1. Information We Collect",
+          body: "When you submit an enquiry or booking request through our website, we collect the information you provide, such as your name, phone number, email address, event date, location, required services and any message you share. We may also collect basic technical information such as your IP address and browser type.",
+        },
+        {
+          heading: "2. How We Use Your Information",
+          body: "We use your information to respond to your enquiry, discuss your event requirements, provide a quotation, confirm your booking and send you service-related updates. We may also use your contact details to send promotional information about our services, unless you opt out.",
+        },
+        {
+          heading: "3. Sharing Your Information",
+          body: "We do not sell or rent your personal information to third parties. We may share your details with trusted service providers who help us operate our business, such as messaging and communication tools, and only to the extent necessary to serve you.",
+        },
+        {
+          heading: "4. Data Security",
+          body: "We take reasonable steps to protect your information from unauthorised access, disclosure or misuse. However, no online service is completely secure, and we cannot guarantee absolute protection.",
+        },
+        {
+          heading: "5. Your Rights",
+          body: "You have the right to access, correct or delete your personal information. You may also opt out of promotional communications at any time. To exercise these rights, contact us at 9098888130.",
+        },
+        {
+          heading: "6. Cookies",
+          body: "Our website may use cookies to improve your experience and understand how the site is used. You can adjust your browser settings to disable cookies if you prefer.",
+        },
+        {
+          heading: "7. Changes to This Policy",
+          body: "We may update this Privacy Policy from time to time. The revised policy will be posted on this page with the updated date.",
+        },
+      ],
+    },
+    terms: {
+      title: "Terms & Conditions",
+      subtitle: "Please read these terms before using the MANI TENT HOUSE website and services.",
+      sections: [
+        {
+          heading: "1. Use of Our Website",
+          body: "By using this website, you agree to these terms and conditions. You must use the site only for lawful purposes and in a way that does not harm others or interfere with the site's operation.",
+        },
+        {
+          heading: "2. Enquiries and Bookings",
+          body: "The information you submit through enquiry and booking forms is for the purpose of discussing your event and providing a quotation. Submitting a form does not guarantee a booking or final pricing.",
+        },
+        {
+          heading: "3. Pricing and Availability",
+          body: "All pricing and availability are subject to confirmation by our team. We reserve the right to change or withdraw any service offering at any time.",
+        },
+        {
+          heading: "4. Cancellation and Changes",
+          body: "Cancellation or rescheduling terms will be discussed and agreed with our team at the time of booking. Any changes to your event requirements should be communicated as early as possible.",
+        },
+        {
+          heading: "5. Intellectual Property",
+          body: "All content on this website, including images, text and logos, is owned by or licensed to MANI TENT HOUSE and is protected by intellectual property laws.",
+        },
+        {
+          heading: "6. Limitation of Liability",
+          body: "While we strive to provide accurate information, we do not accept liability for any loss or damage arising from the use of this website or reliance on any content displayed.",
+        },
+        {
+          heading: "7. Governing Law",
+          body: "These terms are governed by the laws of India. Any dispute will be resolved in the courts of Bilaspur, Chhattisgarh.",
+        },
+      ],
+    },
   },
   hi: {
     brandName: "MANI TENT HOUSE",
@@ -493,6 +561,74 @@ export const dictionary = {
       disclaimer: "बिलासपुर, छत्तीसगढ़ और आसपास के क्षेत्रों में वेडिंग टेंट, वेडिंग डेकोरेशन, मंडप, स्टेज और रिसेप्शन डेकोरेशन सेवाएं।",
       privacy: "गोपनीयता नीति",
       terms: "नियम एवं शर्तें",
+    },
+    privacyPolicy: {
+      title: "गोपनीयता नीति",
+      subtitle: "MANI TENT HOUSE आपकी जानकारी कैसे एकत्र, उपयोग और सुरक्षित करता है।",
+      sections: [
+        {
+          heading: "1. हम कौन सी जानकारी एकत्र करते हैं",
+          body: "जब आप हमारी वेबसाइट के माध्यम से कोई पूछताछ या बुकिंग अनुरोध सबमिट करते हैं, तो हम आपके द्वारा प्रदान की गई जानकारी एकत्र करते हैं, जैसे आपका नाम, फोन नंबर, ईमेल पता, आयोजन की तारीख, स्थान, आवश्यक सेवाएं और आपके द्वारा साझा किया गया कोई भी संदेश। हम आईपी एड्रेस और ब्राउज़र प्रकार जैसी बुनियादी तकनीकी जानकारी भी एकत्र कर सकते हैं।",
+        },
+        {
+          heading: "2. हम आपकी जानकारी का उपयोग कैसे करते हैं",
+          body: "हम आपकी पूछताछ का उत्तर देने, आपके आयोजन की आवश्यकताओं पर चर्चा करने, कोटेशन प्रदान करने, आपकी बुकिंग की पुष्टि करने और सेवा से संबंधित अपडेट भेजने के लिए आपकी जानकारी का उपयोग करते हैं। हम अपनी सेवाओं के बारे में प्रचार संबंधी जानकारी भेजने के लिए भी आपके संपर्क विवरण का उपयोग कर सकते हैं, जब तक कि आप मना न करें।",
+        },
+        {
+          heading: "3. आपकी जानकारी साझा करना",
+          body: "हम आपकी व्यक्तिगत जानकारी तीसरे पक्ष को बेचते या किराए पर नहीं देते हैं। हम केवल आपको सेवा देने के लिए आवश्यक सीमा तक, विश्वसनीय सेवा प्रदाताओं (जैसे मैसेजिंग और संचार उपकरण) के साथ आपके विवरण साझा कर सकते हैं।",
+        },
+        {
+          heading: "4. डेटा सुरक्षा",
+          body: "हम अनधिकृत पहुंच, खुलासे या दुरुपयोग से आपकी जानकारी की रक्षा के लिए उचित कदम उठाते हैं। हालांकि, कोई भी ऑनलाइन सेवा पूरी तरह से सुरक्षित नहीं है, और हम पूर्ण सुरक्षा की गारंटी नहीं दे सकते।",
+        },
+        {
+          heading: "5. आपके अधिकार",
+          body: "आपको अपनी व्यक्तिगत जानकारी तक पहुंचने, उसे सही करने या हटाने का अधिकार है। आप किसी भी समय प्रचार संचार से ऑप्ट-आउट भी कर सकते हैं। इन अधिकारों का उपयोग करने के लिए 9098888130 पर हमसे संपर्क करें।",
+        },
+        {
+          heading: "6. कुकीज़ (Cookies)",
+          body: "हमारी वेबसाइट आपके अनुभव को बेहतर बनाने और यह समझने के लिए कुकीज़ का उपयोग कर सकती है कि साइट का उपयोग कैसे किया जाता है। यदि आप चाहें तो कुकीज़ को अक्षम करने के लिए अपनी ब्राउज़र सेटिंग्स को समायोजित कर सकते हैं।",
+        },
+        {
+          heading: "7. इस नीति में परिवर्तन",
+          body: "हम समय-समय पर इस गोपनीयता नीति को अपडेट कर सकते हैं। संशोधित नीति को अद्यतन तिथि के साथ इस पृष्ठ पर पोस्ट किया जाएगा।",
+        },
+      ],
+    },
+    terms: {
+      title: "नियम एवं शर्तें",
+      subtitle: "MANI TENT HOUSE वेबसाइट और सेवाओं का उपयोग करने से पहले कृपया इन नियमों को पढ़ें।",
+      sections: [
+        {
+          heading: "1. हमारी वेबसाइट का उपयोग",
+          body: "इस वेबसाइट का उपयोग करके आप इन नियमों और शर्तों से सहमत होते हैं। आपको इस साइट का उपयोग केवल वैध उद्देश्यों के लिए करना होगा और इस तरह से जिससे दूसरों को नुकसान न पहुंचे या साइट के संचालन में बाधा न आए।",
+        },
+        {
+          heading: "2. पूछताछ और बुकिंग",
+          body: "पूछताछ और बुकिंग फॉर्म के माध्यम से आपके द्वारा सबमिट की गई जानकारी आपके आयोजन पर चर्चा करने और कोटेशन प्रदान करने के उद्देश्य से है। फॉर्म सबमिट करने से बुकिंग या अंतिम मूल्य निर्धारण की गारंटी नहीं मिलती है।",
+        },
+        {
+          heading: "3. मूल्य निर्धारण और उपलब्धता",
+          body: "सभी मूल्य निर्धारण और उपलब्धता हमारी टीम द्वारा पुष्टि के अधीन हैं। हम किसी भी समय किसी भी सेवा की पेशकश को बदलने या वापस लेने का अधिकार सुरक्षित रखते हैं।",
+        },
+        {
+          heading: "4. रद्दीकरण और परिवर्तन",
+          body: "रद्दीकरण या पुनर्निर्धारण की शर्तों पर बुकिंग के समय हमारी टीम के साथ चर्चा की जाएगी और सहमति दी जाएगी। आपके आयोजन की आवश्यकताओं में किसी भी बदलाव को यथासंभव जल्द से जल्दcommunicated किया जाना चाहिए।",
+        },
+        {
+          heading: "5. बौद्धिक संपदा",
+          body: "इस वेबसाइट की सभी सामग्री, जिसमें छवियां, पाठ और लोगो शामिल हैं, MANI TENT HOUSE के स्वामित्व में हैं या लाइसेंस प्राप्त हैं और बौद्धिक संपदा कानूनों द्वारा सुरक्षित हैं।",
+        },
+        {
+          heading: "6. दायित्व की सीमा",
+          body: "यद्यपि हम सटीक जानकारी प्रदान करने का प्रयास करते हैं, फिर भी हम इस वेबसाइट के उपयोग या प्रदर्शित किसी भी सामग्री पर निर्भरता से होने वाले किसी भी नुकसान या क्षति के लिए दायित्व स्वीकार नहीं करते हैं।",
+        },
+        {
+          heading: "7. शासक कानून",
+          body: "ये शर्तें भारत के कानूनों द्वारा नियंत्रित हैं। किसी भी विवाद का समाधान बिलासपुर, छत्तीसगढ़ की अदालतों में किया जाएगा।",
+        },
+      ],
     },
   },
 };
