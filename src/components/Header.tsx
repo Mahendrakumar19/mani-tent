@@ -36,9 +36,9 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gold/30'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-gold/20 shadow-xl'
           : 'bg-transparent'
       }`}
     >
@@ -111,14 +111,14 @@ export default function Header({ locale }: HeaderProps) {
             isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-6 px-2 space-y-1 border-t border-gold/20 bg-white/50 backdrop-blur-sm">
+          <div className="py-8 px-2 space-y-2 border-t border-gold/20 bg-white/80 backdrop-blur-xl">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block py-3 px-3 text-base font-medium rounded-lg transition-colors ${
+                  className={`block py-3 px-4 text-lg font-medium transition-colors rounded-lg ${
                     isActive ? 'text-gold bg-gold/10' : 'text-charcoal hover:bg-gold/5'
                   }`}
                 >
@@ -126,7 +126,7 @@ export default function Header({ locale }: HeaderProps) {
                 </Link>
               );
             })}
-            <div className="pt-2">
+            <div className="pt-4">
               <LanguageSwitcher currentLocale={locale} />
             </div>
           </div>

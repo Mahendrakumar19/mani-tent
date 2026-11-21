@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { inter, playfair, noto } from '@/lib/fonts';
-import '@/styles/globals.css';
+import '@/app/globals.css';
 
 export const metadata: Metadata = {
   title: 'MANI TENT HOUSE | Wedding Tent & Decoration in Bilaspur',

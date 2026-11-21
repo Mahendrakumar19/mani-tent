@@ -28,27 +28,29 @@ export default function Card({
   className = '',
 }: CardProps) {
   const hoverClasses = hoverable
-    ? 'group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:border-gold/30 transition-all duration-300'
+    ? 'group-hover:translate-y-[-6px] group-hover:shadow-2xl group-hover:border-gold/30 group-hover:bg-white/95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]'
     : '';
 
   return (
     <div
       className={cn(
-        'bg-white/80 backdrop-blur rounded-xl p-7 sm:p-6 md:p-8 border border-gold/15 shadow-sm',
+        'bg-white/90 backdrop-blur-2xl rounded-2xl p-8 sm:p-6 md:p-8 border border-gold/20 shadow-2xl overflow-hidden',
         hoverClasses,
+        'hover:shadow-gold/20 transition-shadow duration-500',
         className
       )}
     >
       {icon && (
         <div
           className={cn(
-            'w-12 h-12 rounded-full flex items-center justify-center mb-5',
-            'bg-gold/10',
-            hoverable && 'group-hover:bg-gold/20 transition-colors'
+            'w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto',
+            'bg-gold/5',
+            'transition-colors duration-300',
+            hoverable && 'group-hover:bg-gold/15'
           )}
         >
           {typeof icon === 'string' ? (
-            <span className="text-gold/70 font-playfair text-2xl font-bold">
+            <span className="text-gold/80 font-playfair text-3xl font-semibold">
               {icon}
             </span>
           ) : (
@@ -59,16 +61,20 @@ export default function Card({
 
       <h3
         className={cn(
-          'font-playfair text-lg font-semibold text-charcoal mb-3',
+          'font-playfair text-xl font-semibold text-charcoal mb-4 tracking-tight',
           hoverable && 'group-hover:text-gold transition-colors'
         )}
       >
         {title}
       </h3>
 
-      <p className="text-sm text-charcoal/75 leading-relaxed">
+      <p className="text-base text-charcoal/75 leading-relaxed md:text-lg">
         {description}
       </p>
+
+      <div className="mt-8 pt-8 border-t border-gold/20 opacity-60">
+        <span className="inline-block w-full h-1 rounded-full bg-gold/30" />
+      </div>
     </div>
   );
 }

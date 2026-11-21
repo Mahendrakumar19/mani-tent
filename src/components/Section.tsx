@@ -43,10 +43,15 @@ export function SectionHeader({
       )}
       <h2 className={cn(
         'font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight animate-fade-in-delay',
-        variant === 'dark' ? 'text-white' : 'text-charcoal'
+        variant === 'dark' ? 'text-white' : 'text-charcoal',
+        align === 'center' && 'mx-auto'
       )}>
         {title}
       </h2>
+      <div className={cn(
+        'mx-auto mt-6 md:mt-8 h-0.5 w-16 md:w-24 bg-gradient-to-r from-transparent via-gold/60 to-transparent',
+        align === 'center' ? 'opacity-100' : 'opacity-0 animate-fade-in-delay-2'
+      )} />
       {subtitle && (
         <p className={cn(
           'mt-4 md:mt-6 lg:mt-8 text-base md:text-lg leading-relaxed max-w-2xl animate-fade-in-delay-2',
