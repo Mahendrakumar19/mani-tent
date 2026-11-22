@@ -10,15 +10,8 @@ interface CardProps {
 }
 
 /**
- * Reusable Card component for consistent card styling across the site.
- * Used for reasons, features, menu items, and other grouped content.
- * Features Apple-inspired glassmorphism with subtle frost effects.
- *
- * @param icon - Emoji, number, or ReactNode icon
- * @param title - Card title (supports Playfair font styling)
- * @param description - Card description text
- * @param hoverable - Enable hover effects and lift animation (default: true)
- * @param className - Additional Tailwind classes
+ * Clean, self-contained card. Hover effects use `hover:` (not `group-hover:`)
+ * so they work regardless of the parent layout.
  */
 export default function Card({
   icon,
@@ -27,54 +20,52 @@ export default function Card({
   hoverable = true,
   className = '',
 }: CardProps) {
-  const hoverClasses = hoverable
-    ? 'group-hover:translate-y-[-6px] group-hover:shadow-2xl group-hover:border-gold/30 group-hover:bg-white/95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]'
-    : '';
+  const renderIcon = () => {
+    if (icon === undefined || icon === null) return null;
+    if (typeof icon === 'string' || typeof icon === 'number') {
+      return (
+        <span className="font-playfair text-2xl font-semibold text-gold">{icon}</span>
+      );
+    }
+    return icon;
+  };
 
   return (
     <div
       className={cn(
-        'bg-white/90 backdrop-blur-2xl rounded-2xl p-8 sm:p-6 md:p-8 border border-gold/20 shadow-2xl overflow-hidden',
-        hoverClasses,
-        'hover:shadow-gold/20 transition-shadow duration-500',
+        'group relative flex h-full flex-col rounded-2xl border border-gold/15 bg-white p-7 md:p-8 shadow-sm',
+        hoverable &&
+          'transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-xl',
         className
       )}
     >
-      {icon && (
+      {icon !== undefined && icon !== null && (
         <div
           className={cn(
-            'w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto',
-            'bg-gold/5',
-            'transition-colors duration-300',
-            hoverable && 'group-hover:bg-gold/15'
+            'mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gold/10',
+            hoverable && 'transition-colors duration-300 group-hover:bg-gold/20'
           )}
         >
-          {typeof icon === 'string' ? (
-            <span className="text-gold/80 font-playfair text-3xl font-semibold">
-              {icon}
-            </span>
-          ) : (
-            icon
-          )}
+          {renderIcon()}
         </div>
       )}
 
-      <h3
-        className={cn(
-          'font-playfair text-xl font-semibold text-charcoal mb-4 tracking-tight',
-          hoverable && 'group-hover:text-gold transition-colors'
-        )}
-      >
+      <h3 className="font-playfair text-xl font-semibold text-charcoal mb-3">
         {title}
       </h3>
 
-      <p className="text-base text-charcoal/75 leading-relaxed md:text-lg">
+      <div className="text-[15px] leading-relaxed text-charcoal/70">
         {description}
-      </p>
-
-      <div className="mt-8 pt-8 border-t border-gold/20 opacity-60">
-        <span className="inline-block w-full h-1 rounded-full bg-gold/30" />
       </div>
+
+      {/* Gold accent that grows on hover */}
+      <span
+        className={cn(
+          'pointer-events-none absolute bottom-0 left-7 right-7 h-px origin-left scale-x-0 bg-gold/50',
+          hoverable && 'transition-transform duration-500 group-hover:scale-x-100'
+        )}
+        aria-hidden="true"
+      />
     </div>
   );
 }

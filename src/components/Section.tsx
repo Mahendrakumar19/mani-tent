@@ -12,7 +12,7 @@ export function Section({ children, className, id, 'aria-label': ariaLabel }: Se
     <section
       id={id}
       aria-label={ariaLabel}
-      className={cn('py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-300', className)}
+      className={cn('py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8', className)}
     >
       <div className="max-w-7xl mx-auto">{children}</div>
     </section>
@@ -34,29 +34,45 @@ export function SectionHeader({
   align = 'left',
   variant = 'light',
 }: SectionHeaderProps) {
+  const isCenter = align === 'center';
+  const isDark = variant === 'dark';
+
   return (
-    <div className={cn('mb-12 md:mb-16 lg:mb-20', align === 'center' && 'text-center max-w-3xl mx-auto')}>
+    <div className={cn('mb-12 md:mb-16', isCenter && 'mx-auto max-w-3xl text-center')}>
       {eyebrow && (
-        <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-gold mb-4 md:mb-6 animate-fade-in">
-          {eyebrow}
+        <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+          {isCenter ? (
+            <span className="flex w-full items-center justify-center gap-3">
+              <span className="h-px w-8 bg-gold/40" />
+              {eyebrow}
+              <span className="h-px w-8 bg-gold/40" />
+            </span>
+          ) : (
+            <>
+              <span className="h-px w-8 bg-gold/40" />
+              {eyebrow}
+            </>
+          )}
         </p>
       )}
-      <h2 className={cn(
-        'font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight animate-fade-in-delay',
-        variant === 'dark' ? 'text-white' : 'text-charcoal',
-        align === 'center' && 'mx-auto'
-      )}>
+
+      <h2
+        className={cn(
+          'font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] tracking-[-0.02em]',
+          isDark ? 'text-ivory' : 'text-charcoal'
+        )}
+      >
         {title}
       </h2>
-      <div className={cn(
-        'mx-auto mt-6 md:mt-8 h-0.5 w-16 md:w-24 bg-gradient-to-r from-transparent via-gold/60 to-transparent',
-        align === 'center' ? 'opacity-100' : 'opacity-0 animate-fade-in-delay-2'
-      )} />
+
       {subtitle && (
-        <p className={cn(
-          'mt-4 md:mt-6 lg:mt-8 text-base md:text-lg leading-relaxed max-w-2xl animate-fade-in-delay-2',
-          variant === 'dark' ? 'text-white/90' : 'text-charcoal/80'
-        )}>
+        <p
+          className={cn(
+            'mt-4 md:mt-5 text-base md:text-lg leading-relaxed',
+            isCenter ? 'mx-auto max-w-2xl' : 'max-w-2xl',
+            isDark ? 'text-ivory/70' : 'text-charcoal/65'
+          )}
+        >
           {subtitle}
         </p>
       )}

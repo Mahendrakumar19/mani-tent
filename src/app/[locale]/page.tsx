@@ -43,12 +43,12 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         <SectionHeader title={t.intro.title} />
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           <div className="space-y-4">
-            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-charcoal/85">
+            <p className="text-base md:text-lg leading-relaxed text-charcoal/70">
               {t.intro.body1}
             </p>
           </div>
           <div className="space-y-4">
-            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-charcoal/85">
+            <p className="text-base md:text-lg leading-relaxed text-charcoal/70">
               {t.intro.body2}
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Services */}
-      <Section className="bg-white/60 backdrop-blur-sm">
+      <Section className="bg-beige/40">
         <SectionHeader
           eyebrow={locale === 'hi' ? 'सेवाएं' : 'Services'}
           title={t.servicesSection.title}
@@ -65,7 +65,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {CONFIRMED_SERVICES.map((service, index) => (
-            <div key={service.id} style={{ '--delay': `${index * 100}ms` } as React.CSSProperties}>
+            <div key={service.id} style={{ '--delay': `${index * 90}ms` } as React.CSSProperties}>
               <ServiceCard
                 title={service.title}
                 description={service.shortDescription}
@@ -94,7 +94,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Decoration Inspiration Gallery */}
-      <Section className="bg-charcoal/95 text-white">
+      <Section className="bg-charcoal text-ivory">
         <SectionHeader
           title={t.gallerySection.title}
           subtitle={t.gallerySection.subtitle}
@@ -105,15 +105,15 @@ export default function HomePage({ params }: { params: { locale: string } }) {
           {CONFIRMED_SERVICES.slice(0, 5).map((service, index) => (
             <div
               key={service.id}
-              className="relative h-56 sm:h-64 md:h-80 overflow-hidden rounded-xl group shadow-lg"
+              className="relative h-56 sm:h-64 md:h-80 overflow-hidden rounded-2xl group"
             >
               <img
                 src={service.image}
                 alt={service.title[locale]}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-120"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 md:p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-4 md:p-6">
                 <span className="text-sm md:text-base font-semibold text-gold/90">
                   {service.title[locale]}
                 </span>
@@ -143,18 +143,16 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       {/* Process */}
       <Section>
         <SectionHeader title={t.processSection.title} align="center" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {t.processSection.steps.map((step) => (
-            <div key={step.num} className="relative group">
-              <div className="flex flex-col items-center text-center">
-                <span className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-gold/30 to-gold/10 text-charcoal font-playfair font-bold flex items-center justify-center text-xl mb-5 group-hover:from-gold/40 group-hover:to-gold/20 transition-all shadow-md">
-                  {step.num}
-                </span>
-                <h3 className="font-playfair text-lg font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors">
-                  {step.title}
-                </h3>
-              </div>
-              <p className="text-sm text-charcoal/75 leading-relaxed text-center">
+            <div key={step.num} className="group text-center">
+              <span className="mx-auto mb-5 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 font-playfair text-xl font-bold text-gold transition-all duration-500 group-hover:bg-gold group-hover:text-charcoal">
+                {step.num}
+              </span>
+              <h3 className="font-playfair text-lg font-semibold text-charcoal mb-3">
+                {step.title}
+              </h3>
+              <p className="text-sm text-charcoal/65 leading-relaxed">
                 {step.desc}
               </p>
             </div>
@@ -165,15 +163,15 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       {/* Location */}
       <Section>
         <SectionHeader title={t.locationSection.title} align="center" />
-        <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur rounded-xl p-8 md:p-10 border border-gold/15 shadow-sm">
-          <p className="text-base md:text-lg leading-relaxed text-charcoal/80 text-center">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-gold/20 bg-white/60 p-8 md:p-10 shadow-sm backdrop-blur">
+          <p className="text-base md:text-lg leading-relaxed text-charcoal/70 text-center">
             {t.locationSection.text}
           </p>
         </div>
       </Section>
 
       {/* Menu Card */}
-      <Section className="bg-white/60 backdrop-blur-sm">
+      <Section className="bg-beige/40">
         <SectionHeader
           title={t.menuSection.title}
           subtitle={t.menuSection.subtitle}
@@ -200,7 +198,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-white/60 backdrop-blur-sm">
+      <Section className="bg-beige/40">
         <SectionHeader title={t.faqSection.title} align="center" />
         <div className="max-w-3xl mx-auto">
           <FAQAccordion items={t.faqSection.faqs} />
@@ -208,7 +206,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       </Section>
 
       {/* Final CTA */}
-      <Section className="bg-gradient-to-b from-charcoal/95 to-charcoal text-white text-center">
+      <Section className="bg-charcoal text-ivory text-center">
         <SectionHeader
           title={t.finalCta.title}
           subtitle={t.finalCta.text}
