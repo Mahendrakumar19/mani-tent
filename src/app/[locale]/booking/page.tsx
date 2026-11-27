@@ -67,7 +67,7 @@ export default function BookingPage({
       {/* Info Section */}
       <Section className="bg-white/60 backdrop-blur-sm border-t border-gold/10">
         <div className="max-w-3xl mx-auto">
-          <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
+          <h3 className="font-inter font-semibold text-2xl text-charcoal mb-4">
             {locale === 'hi'
               ? 'बुकिंग के बारे में जानकारी'
               : 'About Booking Process'}
@@ -95,7 +95,7 @@ export default function BookingPage({
       {/* Contact Info */}
       <Section>
         <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur rounded-2xl border border-gold/15 p-8 shadow-sm">
-          <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-6">
+          <h3 className="font-inter font-semibold text-2xl text-charcoal mb-6">
             {locale === 'hi'
               ? 'किसी भी सवाल के लिए हमसे संपर्क करें'
               : 'Questions? Contact Us'}

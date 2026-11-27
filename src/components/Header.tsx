@@ -48,7 +48,7 @@ export default function Header({ locale }: HeaderProps) {
             href={`/${locale}`}
             className="flex flex-col leading-none transition-opacity hover:opacity-70"
           >
-            <span className="font-playfair text-lg font-bold tracking-wide text-charcoal md:text-xl">
+            <span className="font-inter font-bold text-lg tracking-wide text-charcoal md:text-xl">
               MANI TENT HOUSE
             </span>
             <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.25em] text-gold">

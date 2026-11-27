@@ -77,7 +77,7 @@ export default function SettingsPage() {
     <div className="p-8 max-w-2xl mx-auto">
       {/* Header */}
       <div className="mb-10">
-        <h1 className="text-4xl font-bold text-charcoal font-playfair mb-2">⚙️ Admin Settings</h1>
+        <h1 className="text-4xl font-bold text-charcoal font-inter mb-2">⚙️ Admin Settings</h1>
         <p className="text-charcoal/60">Manage your admin account security and preferences</p>
       </div>
 

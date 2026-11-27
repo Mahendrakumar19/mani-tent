@@ -15,7 +15,7 @@ export default function Footer({ locale }: FooterProps) {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:pr-8">
-            <p className="font-playfair text-2xl font-bold text-gold">MANI TENT HOUSE</p>
+            <p className="font-inter font-bold text-2xl text-gold">MANI TENT HOUSE</p>
             <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.3em] text-ivory/40">
               {isHi ? 'बिलासपुर' : 'Bilaspur'}
             </p>

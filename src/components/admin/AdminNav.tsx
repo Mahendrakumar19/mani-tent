@@ -35,7 +35,7 @@ export default function AdminNav() {
   return (
     <nav className="bg-gradient-to-b from-charcoal to-charcoal/95 text-ivory border-r border-gold/20 w-full md:w-64 flex flex-col shadow-lg">
       <div className="p-6 border-b border-gold/20 bg-gradient-to-r from-gold/10 to-transparent">
-        <h1 className="text-2xl font-bold text-gold font-playfair">🎪 MANI TENT HOUSE</h1>
+        <h1 className="text-2xl font-bold text-gold font-inter">🎪 MANI TENT HOUSE</h1>
         <p className="text-xs text-ivory/50 mt-2 uppercase tracking-wide">Admin Control Panel</p>
       </div>
 

@@ -24,7 +24,7 @@ export default function Card({
     if (icon === undefined || icon === null) return null;
     if (typeof icon === 'string' || typeof icon === 'number') {
       return (
-        <span className="font-playfair text-2xl font-semibold text-gold">{icon}</span>
+        <span className="font-inter font-bold text-2xl text-gold">{icon}</span>
       );
     }
     return icon;
@@ -50,7 +50,7 @@ export default function Card({
         </div>
       )}
 
-      <h3 className="font-playfair text-xl font-semibold text-charcoal mb-3">
+      <h3 className="font-inter font-semibold text-xl text-charcoal mb-3">
         {title}
       </h3>
 

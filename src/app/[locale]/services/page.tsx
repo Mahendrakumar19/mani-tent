@@ -143,7 +143,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
           ].map((feature, index) => (
             <div key={index} className="bg-white/80 backdrop-blur rounded-2xl p-6 border border-gold/15 shadow-sm">
               <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="font-playfair text-lg font-semibold text-charcoal mb-2">
+              <h3 className="font-inter font-semibold text-lg text-charcoal mb-2">
                 {feature.title}
               </h3>
               <p className="text-sm text-charcoal/80 leading-relaxed">
@@ -228,7 +228,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
       {/* Pricing Note */}
       <Section className="bg-white/50 backdrop-blur-sm border-t border-b border-gold/10">
         <div className="max-w-3xl">
-          <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
+          <h3 className="font-inter font-semibold text-2xl text-charcoal mb-4">
             {locale === 'hi' ? 'मूल्य निर्धारण' : 'Pricing'}
           </h3>
           <p className="text-base leading-relaxed text-charcoal/90 mb-6">

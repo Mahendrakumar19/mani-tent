@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { noto, playfair } from '@/lib/fonts';
+import { noto } from '@/lib/fonts';
 import { dictionary } from '@/content/dictionary';
 import { generatePageMetadata } from '@/lib/seo';
 import Header from '@/components/Header';
@@ -40,7 +40,7 @@ export default function LocaleLayout({
     <html
       lang={locale}
       dir={locale === 'hi' ? 'ltr' : 'ltr'}
-      className={`${playfair.variable} ${noto.variable}`}
+      className={noto.variable}
       suppressHydrationWarning
     >
       <body className="bg-ivory font-inter text-charcoal antialiased">

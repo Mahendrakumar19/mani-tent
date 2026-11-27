@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { inter, playfair, noto } from '@/lib/fonts';
+import { inter, noto } from '@/lib/fonts';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${noto.variable}`}
+      className={`${inter.variable} ${noto.variable}`}
       suppressHydrationWarning
     >
       <body className="bg-ivory font-inter text-charcoal antialiased">{children}</body>

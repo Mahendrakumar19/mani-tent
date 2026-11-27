@@ -98,7 +98,7 @@ export default function AdminDashboardPage() {
     <div className="p-8 max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-12 pb-6 border-b-2 border-gold/20">
-        <h1 className="text-4xl font-bold text-charcoal font-playfair mb-2">📊 Admin Dashboard</h1>
+        <h1 className="text-4xl font-bold text-charcoal font-inter mb-2">📊 Admin Dashboard</h1>
         <p className="text-charcoal/60">Welcome back! Manage your website content and bookings.</p>
       </div>
 

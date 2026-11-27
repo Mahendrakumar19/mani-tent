@@ -69,7 +69,7 @@ export default function AdminLoginPage() {
         <div className="bg-charcoal/60 border border-gold/30 rounded-2xl p-8 shadow-2xl">
           {/* Logo */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gold font-playfair mb-2">MANI TENT HOUSE</h1>
+            <h1 className="text-4xl font-bold text-gold font-inter mb-2">MANI TENT HOUSE</h1>
             <p className="text-ivory/60 text-sm">Admin Panel</p>
           </div>
 
