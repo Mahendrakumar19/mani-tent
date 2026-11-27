@@ -26,6 +26,7 @@ const config: Config = {
         brown: "#40352C",
       },
       fontFamily: {
+        playfair: ["var(--font-playfair)", "serif"],
         inter: ["var(--font-inter)", "sans-serif"],
         noto: ["var(--font-noto)", "sans-serif"],
       },

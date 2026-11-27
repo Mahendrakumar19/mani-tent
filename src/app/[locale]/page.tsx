@@ -149,7 +149,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
               <span className="mx-auto mb-5 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 font-inter font-bold text-xl text-gold transition-all duration-500 group-hover:bg-gold group-hover:text-charcoal">
                 {step.num}
               </span>
-              <h3 className="font-inter font-semibold text-lg text-charcoal mb-3">
+              <h3 className="font-playfair font-semibold text-lg text-charcoal mb-3">
                 {step.title}
               </h3>
               <p className="text-sm text-charcoal/65 leading-relaxed">

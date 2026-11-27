@@ -50,7 +50,7 @@ export default function Card({
         </div>
       )}
 
-      <h3 className="font-inter font-semibold text-xl text-charcoal mb-3">
+      <h3 className="font-playfair font-semibold text-xl text-charcoal mb-3">
         {title}
       </h3>
 

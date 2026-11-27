@@ -65,7 +65,7 @@ export default function TermsPage({
               key={index}
               className="bg-white/80 backdrop-blur rounded-2xl p-8 border border-gold/15 shadow-sm"
             >
-              <h2 className="font-inter font-semibold text-2xl text-charcoal mb-4">
+              <h2 className="font-playfair font-semibold text-2xl text-charcoal mb-4">
                 {section.heading}
               </h2>
               <p className="text-base leading-relaxed text-charcoal/90">

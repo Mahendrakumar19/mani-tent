@@ -58,7 +58,7 @@ export function SectionHeader({
 
       <h2
         className={cn(
-          'font-inter font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-[-0.02em]',
+          'font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] tracking-[-0.02em]',
           isDark ? 'text-ivory' : 'text-charcoal'
         )}
       >

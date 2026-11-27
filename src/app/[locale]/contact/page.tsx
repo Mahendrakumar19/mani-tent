@@ -103,7 +103,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               className="bg-white/80 backdrop-blur rounded-xl p-6 border border-gold/15 shadow-sm text-center"
             >
               <div className="text-4xl mb-4">{info.icon}</div>
-              <h3 className="font-inter font-semibold text-lg text-charcoal mb-2">
+              <h3 className="font-playfair font-semibold text-lg text-charcoal mb-2">
                 {info.title}
               </h3>
               <p className="font-semibold text-charcoal mb-2">{info.content}</p>
@@ -116,7 +116,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       {/* Quick Contact Links */}
       <Section className="bg-white/60 backdrop-blur-sm">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-inter font-bold text-2xl text-charcoal mb-6">
+          <h2 className="font-playfair font-bold text-2xl text-charcoal mb-6">
             {locale === 'hi' ? 'तुरंत संपर्क करें' : 'Quick Contact'}
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -219,7 +219,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gold text-charcoal font-inter font-bold flex items-center justify-center mx-auto mb-4">
                 {item.num}
               </span>
-              <h3 className="font-inter font-semibold text-lg text-charcoal mb-2">
+              <h3 className="font-playfair font-semibold text-lg text-charcoal mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-charcoal/80">{item.desc}</p>
@@ -255,7 +255,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       {/* Thank You Message */}
       <Section>
         <div className="max-w-2xl mx-auto text-center bg-white/80 backdrop-blur rounded-xl p-8 border border-gold/15 shadow-sm">
-          <h3 className="font-inter font-semibold text-2xl text-charcoal mb-4">
+          <h3 className="font-playfair font-semibold text-2xl text-charcoal mb-4">
             {locale === 'hi' ? 'धन्यवाद!' : 'Thank You!'}
           </h3>
           <p className="text-base leading-relaxed text-charcoal/90">

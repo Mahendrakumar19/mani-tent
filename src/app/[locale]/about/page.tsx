@@ -66,7 +66,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
         />
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <div>
-            <h3 className="font-inter font-semibold text-2xl text-charcoal mb-4">
+            <h3 className="font-playfair font-semibold text-2xl text-charcoal mb-4">
               {locale === 'hi' ? 'कैसे शुरु हुआ' : 'How We Started'}
             </h3>
             <p className="text-base leading-relaxed text-charcoal/90 mb-4">
@@ -81,7 +81,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             </p>
           </div>
           <div>
-            <h3 className="font-inter font-semibold text-2xl text-charcoal mb-4">
+            <h3 className="font-playfair font-semibold text-2xl text-charcoal mb-4">
               {locale === 'hi' ? 'हमारा दृष्टिकोण' : 'Our Approach'}
             </h3>
             <p className="text-base leading-relaxed text-charcoal/90 mb-4">
@@ -156,7 +156,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
                   {index + 1}
                 </span>
               </div>
-              <h3 className="font-inter font-semibold text-lg text-charcoal mb-2">
+              <h3 className="font-playfair font-semibold text-lg text-charcoal mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-charcoal/80 leading-relaxed">
@@ -209,7 +209,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             },
           ].map((service, index) => (
             <div key={index} className="border-l-4 border-gold pl-6">
-              <h3 className="font-inter font-semibold text-xl text-charcoal mb-2">
+              <h3 className="font-playfair font-semibold text-xl text-charcoal mb-2">
                 {service.title}
               </h3>
               <p className="text-base text-charcoal/80">{service.desc}</p>

@@ -41,7 +41,7 @@ export default function ServiceCard({ title, description, image, href, locale }:
         <div className="absolute bottom-0 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
       <div className="p-6 sm:p-5 md:p-6 relative">
-        <h3 className="font-inter font-semibold text-lg sm:text-xl text-charcoal mb-3 group-hover:text-gold transition-colors duration-300 line-clamp-2">
+        <h3 className="font-playfair font-semibold text-lg sm:text-xl text-charcoal mb-3 group-hover:text-gold transition-colors duration-300 line-clamp-2">
           {title[locale]}
         </h3>
         <p className="text-sm text-charcoal/75 line-clamp-3 mb-4 leading-relaxed">

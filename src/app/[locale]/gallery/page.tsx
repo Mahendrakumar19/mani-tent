@@ -93,7 +93,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
       {/* Gallery Note */}
       <Section className="bg-white/50 backdrop-blur-sm border-y border-gold/10">
         <div className="max-w-3xl">
-          <h3 className="font-inter font-semibold text-2xl text-charcoal mb-4">
+          <h3 className="font-playfair font-semibold text-2xl text-charcoal mb-4">
             {locale === 'hi' ? 'गैलरी के बारे में' : 'About This Gallery'}
           </h3>
           <p className="text-base leading-relaxed text-charcoal/90 mb-4">
@@ -132,7 +132,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-inter font-semibold text-lg text-charcoal group-hover:text-gold transition-colors mb-2">
+                <h3 className="font-playfair font-semibold text-lg text-charcoal group-hover:text-gold transition-colors mb-2">
                   {service.title[locale]}
                 </h3>
                 <p className="text-sm text-charcoal/80 leading-relaxed mb-4">
@@ -210,7 +210,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
               className="bg-white/80 backdrop-blur rounded-2xl p-6 border border-gold/15 shadow-sm text-center"
             >
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="font-inter font-semibold text-lg text-charcoal mb-2">
+              <h3 className="font-playfair font-semibold text-lg text-charcoal mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-charcoal/80">{item.desc}</p>
@@ -224,7 +224,7 @@ export default function GalleryPage({ params }: { params: { locale: string } }) 
         <div className="flex gap-4 items-start">
           <span className="text-3xl flex-shrink-0">📸</span>
           <div>
-            <h3 className="font-inter font-semibold text-xl mb-2">
+            <h3 className="font-playfair font-semibold text-xl mb-2">
               {locale === 'hi' ? 'नए फोटो जल्द ही आ रहे हैं' : 'More Photos Coming Soon'}
             </h3>
             <p className="text-base leading-relaxed text-ivory/90 mb-4">

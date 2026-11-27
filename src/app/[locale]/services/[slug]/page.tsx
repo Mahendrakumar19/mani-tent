@@ -86,7 +86,7 @@ export default function ServiceDetailPage({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent" />
           <div className="absolute inset-0 flex items-end p-6 md:p-8">
-            <h1 className="font-inter font-semibold text-3xl md:text-5xl text-ivory">
+            <h1 className="font-playfair font-semibold text-3xl md:text-5xl text-ivory">
               {service.title[locale]}
             </h1>
           </div>
@@ -199,7 +199,7 @@ export default function ServiceDetailPage({
               key={index}
               className="bg-white rounded-lg p-6 border border-beige shadow-sm"
             >
-              <h3 className="font-inter font-semibold text-lg text-charcoal mb-2">
+              <h3 className="font-playfair font-semibold text-lg text-charcoal mb-2">
                 {feature.title}
               </h3>
               <p className="text-sm text-charcoal/80">{feature.desc}</p>
@@ -254,7 +254,7 @@ export default function ServiceDetailPage({
                   {step.num}
                 </span>
               </div>
-              <h4 className="font-inter font-semibold text-base text-charcoal mb-2">
+              <h4 className="font-playfair font-semibold text-base text-charcoal mb-2">
                 {step.title}
               </h4>
               <p className="text-xs text-charcoal/80">{step.desc}</p>
@@ -288,7 +288,7 @@ export default function ServiceDetailPage({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h3 className="font-inter font-semibold text-lg text-charcoal group-hover:text-gold transition-colors">
+                <h3 className="font-playfair font-semibold text-lg text-charcoal group-hover:text-gold transition-colors">
                   {relatedService.title[locale]}
                 </h3>
                 <p className="text-sm text-charcoal/80 mt-2">

@@ -79,7 +79,7 @@ export default function Hero({ locale }: HeroProps) {
 
         <h1
           id="hero-heading"
-          className={`font-inter font-semibold text-[2.6rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-bold text-ivory tracking-[-0.02em] transition-all duration-1000 ease-out ${
+          className={`font-playfair font-semibold text-[2.6rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-bold text-ivory tracking-[-0.02em] transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
           style={{ transitionDelay: '80ms' }}

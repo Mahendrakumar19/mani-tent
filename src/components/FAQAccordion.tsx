@@ -42,7 +42,7 @@ export default function FAQAccordion({ items, className }: FAQAccordionProps) {
             >
               <span
                 className={cn(
-                  'font-inter font-semibold text-base md:text-lg transition-colors duration-300',
+                  'font-playfair font-semibold text-base md:text-lg transition-colors duration-300',
                   isOpen ? 'text-gold' : 'text-charcoal'
                 )}
               >
